@@ -1,0 +1,210 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Goudkoorts.Cart" Collapsed="true">
+    <Position X="8" Y="1.75" Width="1.5" />
+    <InheritanceLine Type="Goudkoorts.Movable" FixedFromPoint="true">
+      <Path>
+        <Point X="9.75" Y="3.312" />
+        <Point X="9.627" Y="3.312" />
+        <Point X="9.627" Y="2.096" />
+        <Point X="9.5" Y="2.096" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAIAAAAAAAAQAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Cart.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Goudkoorts.Track" Collapsed="true">
+    <Position X="8.5" Y="4.75" Width="1.5" />
+    <AssociationLine Name="_Movable" Type="Goudkoorts.Movable" FixedFromPoint="true">
+      <Path>
+        <Point X="10" Y="5.188" />
+        <Point X="10.625" Y="5.188" />
+        <Point X="10.625" Y="3.562" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.419" Y="0.193" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAA=</HashCode>
+      <FileName>Model\Track.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="_Movable" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Goudkoorts.Level">
+    <Position X="3.25" Y="2.25" Width="1.5" />
+    <AssociationLine Name="_FirstGameObject" Type="Goudkoorts.GameObject">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-1.473" Y="0.643" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>IAAAAAQAAAAAIAAAAAAAAAAAAAEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Level.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_FirstGameObject" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Goudkoorts.GameObject" Collapsed="true">
+    <Position X="2.25" Y="4.75" Width="1.5" />
+    <AssociationLine Name="_East" Type="Goudkoorts.GameObject" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="2.688" Y="5.312" />
+        <Point X="2.688" Y="5.562" />
+        <Point X="2.375" Y="5.562" />
+        <Point X="2.375" Y="5.312" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.558" Y="-0.732" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="_South" Type="Goudkoorts.GameObject">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.443" Y="-0.482" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="_West" Type="Goudkoorts.GameObject" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="3.125" Y="4.75" />
+        <Point X="3.125" Y="4.51" />
+        <Point X="2.875" Y="4.51" />
+        <Point X="2.875" Y="4.75" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="1.091" Y="-0.546" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="_North" Type="Goudkoorts.GameObject" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="2.688" Y="4.75" />
+        <Point X="2.688" Y="4.375" />
+        <Point X="2.375" Y="4.375" />
+        <Point X="2.375" Y="4.75" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.443" Y="-0.2" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <AssociationLine Name="_Next" Type="Goudkoorts.GameObject" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="3.562" Y="5.312" />
+        <Point X="3.562" Y="5.562" />
+        <Point X="3.25" Y="5.562" />
+        <Point X="3.25" Y="5.312" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="1.362" Y="-1.015" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAIAgAAAAAAEgAAAAgAAAAAAAAAAAAAAAAAoAAAAA=</HashCode>
+      <FileName>Model\GameObject.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_East" />
+      <Field Name="_South" />
+      <Field Name="_West" />
+      <Field Name="_North" />
+      <Field Name="_Next" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Goudkoorts.Switch" Collapsed="true">
+    <Position X="7.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Switch.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Goudkoorts.Movable" Collapsed="true">
+    <Position X="9.75" Y="3" Width="1.5" />
+    <AssociationLine Name="_Track" Type="Goudkoorts.Track">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.081" Y="0.183" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Movable.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_Track" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Goudkoorts.Ship" Collapsed="true">
+    <Position X="9.75" Y="1.75" Width="1.5" />
+    <InheritanceLine Type="Goudkoorts.Movable" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="10.562" Y="3" />
+        <Point X="10.562" Y="2.741" />
+        <Point X="10.5" Y="2.741" />
+        <Point X="10.5" Y="2.441" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAQAAAAAAAAAAAABAAAAQAAAAAAAA=</HashCode>
+      <FileName>Model\Ship.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Goudkoorts.Water" Collapsed="true">
+    <Position X="5.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAAAABAAgAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Water.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Goudkoorts.Spacer" Collapsed="true">
+    <Position X="4" Y="7.5" Width="1.5" />
+    <InheritanceLine Type="Goudkoorts.GameObject" ManuallyRouted="true">
+      <Path>
+        <Point X="3" Y="5.312" />
+        <Point X="3" Y="7.272" />
+        <Point X="4.75" Y="7.272" />
+        <Point X="4.75" Y="7.5" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Spacer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Goudkoorts.Warehouse" Collapsed="true">
+    <Position X="2.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Warehouse.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Goudkoorts.MarshallingYard" Collapsed="true">
+    <Position X="9.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\MarshallingYard.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Goudkoorts.Dock" Collapsed="true">
+    <Position X="5.75" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAEAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Dock.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Goudkoorts.Standable" Collapsed="true">
+    <Position X="5.75" Y="4.75" Width="1.5" />
+    <InheritanceLine Type="Goudkoorts.GameObject" FixedFromPoint="true">
+      <Path>
+        <Point X="3.75" Y="5.062" />
+        <Point X="5.75" Y="5.062" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAABAAAAA=</HashCode>
+      <FileName>Model\Standable.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

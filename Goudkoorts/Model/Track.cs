@@ -8,21 +8,27 @@ namespace Goudkoorts
     public class Track : Standable
     {
         // 0 = West to East / no corner
-        // 1 = North to East
-        // 2 = South to East
-        // 3 = West to North
-        // 4 = West to South
+        // 1 = North to South / no corner
+        // 2 = North to East
+        // 3 = South to East
+        // 4 = West to North
+        // 5 = West to South
 
-        private short cornerType;
-        public short CornerType
+        protected short cornerCode;
+        public short CornerCode
         {
-            get { return cornerType; }
+            get { return cornerCode; }
             set { }
         }
 
         public Track(short cornerType)
         {
-            this.cornerType = cornerType;
+            this.cornerCode = cornerType;
+        }
+
+        public Track()
+        {
+            cornerCode = 0;
         }
     }
 }

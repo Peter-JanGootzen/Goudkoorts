@@ -7,16 +7,22 @@ namespace Goudkoorts
 {
     public class Track : Standable
     {
-        private Cart cart;
+        // 0 = West to East / no corner
+        // 1 = North to East
+        // 2 = South to East
+        // 3 = West to North
+        // 4 = West to South
 
-        public Track(Movable moveable)
+        private short cornerType;
+        public short CornerType
         {
-            this._Movable = moveable;
+            get { return cornerType; }
+            set { }
         }
 
-        public Track()
+        public Track(short cornerType)
         {
-
+            this.cornerType = cornerType;
         }
     }
 }

@@ -5,7 +5,15 @@ using System.Text;
 
 namespace Goudkoorts
 {
-    public class Warehouse : GameObject
+    public class Warehouse : Tile
     {
+        public bool SpawnCart()
+        {
+            if (_East is Standable east && east.IsTaken())
+            {
+                return east.MoveOntoThis(new Cart());
+            }
+            return false;
+        }
     }
 }

@@ -9,9 +9,9 @@ namespace Goudkoorts
     {
         protected Standable _Standable;
 
-        public void Move()
+        public bool Move()
         {
-            _Standable.MoveOntoNext(this);
+            return _Standable.MoveOntoNext(this);
         }
     }
 }

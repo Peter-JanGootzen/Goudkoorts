@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Goudkoorts
 {
-    public class Spacer : GameObject
+    public class Spacer : Tile
     {
     }
 }

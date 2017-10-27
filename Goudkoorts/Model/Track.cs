@@ -12,6 +12,7 @@ namespace Goudkoorts
         // 2 = South to East
         // 3 = West to North
         // 4 = West to South
+        // 5 = North to South
 
         private short cornerType;
         public short CornerType

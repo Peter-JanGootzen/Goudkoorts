@@ -7,6 +7,17 @@ namespace Goudkoorts
 {
     public class Water : Standable
     {
+        private Ship ship;
+
+        public Water(Ship ship)
+        {
+            this.ship = ship;
+        }
+
+        public Water()
+        {
+        }
+
         public override bool MoveOntoThis(Movable movable)
         {
             return MoveOnThis(movable as dynamic);

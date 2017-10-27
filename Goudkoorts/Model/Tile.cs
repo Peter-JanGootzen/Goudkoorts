@@ -7,10 +7,10 @@ namespace Goudkoorts
 {
     public class Tile : GameObject
     {
-        protected Tile _East;
-        protected Tile _South;
-        protected Tile _West;
-        protected Tile _North;
+        public Tile _East;
+        public Tile _South;
+        public Tile _West;
+        public Tile _North;
 
         public virtual bool MoveOntoThis(Movable movable)
         {

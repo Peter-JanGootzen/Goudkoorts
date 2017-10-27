@@ -13,9 +13,6 @@ namespace Goudkoorts
 
         public int Points { get; set; }
 
-        public void Update()
-        {
-            Points += 10;
-        }
+        public void Update() => Points += 10;
     }
 }

@@ -7,5 +7,6 @@ namespace Goudkoorts
 {
     public class Spacer : Tile
     {
+        public override char ToChar() => ' ';
     }
 }

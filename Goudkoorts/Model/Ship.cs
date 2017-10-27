@@ -48,5 +48,6 @@ namespace Goudkoorts
         {
             ObserverList.Remove(observer);
         }
+        public override char ToChar() => (char)GoldCount;
     }
 }

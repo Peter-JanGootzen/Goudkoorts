@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Goudkoorts
 {
-    public class Standable : Tile
+    public abstract class Standable : Tile
     {
         protected Movable _Movable;
 

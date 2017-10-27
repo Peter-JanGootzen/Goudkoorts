@@ -25,5 +25,7 @@ namespace Goudkoorts
             else
                 return true;
         }
+
+        public override char ToChar() => 'X';
     }
 }

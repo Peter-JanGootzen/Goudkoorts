@@ -16,7 +16,7 @@
   <Class Name="Goudkoorts.Track" Collapsed="true">
     <Position X="9" Y="12" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AEAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AEAAAABAAAAAAAAAAAAgAAAAAAABAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Model\Track.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -250,8 +250,8 @@
   <Class Name="Goudkoorts.GameObject" Collapsed="true">
     <Position X="2.5" Y="10" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>GameObject.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\GameObject.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

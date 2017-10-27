@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Goudkoorts
 {
-    public class Movable : GameObject
+    public abstract class Movable : GameObject
     {
         protected Standable _Standable;
         public Standable Standable { get { return _Standable; } set { } }

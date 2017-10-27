@@ -14,8 +14,7 @@ namespace Goudkoorts
 
         private bool MoveOnThis(Ship ship)
         {
-            // Check if it's empty and stuff
-            return true;
+            return base.MoveOntoThis(ship);
         }
 
         private bool MoveOnThis(Cart cart)
@@ -37,5 +36,7 @@ namespace Goudkoorts
         {
             return false;
         }
+
+        public override char ToChar() => '█';
     }
 }

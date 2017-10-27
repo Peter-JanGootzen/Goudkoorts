@@ -29,5 +29,7 @@ namespace Goudkoorts
         {
             _Standable = track;
         }
+
+        public override char ToChar() => 'C';
     }
 }

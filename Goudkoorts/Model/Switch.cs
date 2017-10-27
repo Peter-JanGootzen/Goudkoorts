@@ -31,7 +31,7 @@ namespace Goudkoorts
 
         public override bool MoveOntoThis(Movable movable)
         {
-            if (movable._Standable == _ActiveTrack) // if that path was open, try it to move to this
+            if (movable.Standable == _ActiveTrack || movable.Standable == _East || movable.Standable == _West || movable.Standable == _North || movable.Standable == _South) // if that path was open, try it to move to this
                 return base.MoveOntoThis(movable);
             else // if the path was closed, don't try to move it, but return true, because you didn't loose.
                 return true;

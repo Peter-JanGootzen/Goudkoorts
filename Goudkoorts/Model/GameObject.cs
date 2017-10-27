@@ -5,7 +5,8 @@ using System.Text;
 
 namespace Goudkoorts
 {
-    public class GameObject
+    public abstract class GameObject
     {
+        public abstract char ToChar();
     }
 }

@@ -1,0 +1,20 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace Goudkoorts
+{
+    public class Tile
+    {
+        protected Tile _East;
+        protected Tile _South;
+        protected Tile _West;
+        protected Tile _North;
+
+        public virtual bool MoveOntoThis(Movable movable)
+        {
+            return false;
+        }
+    }
+}

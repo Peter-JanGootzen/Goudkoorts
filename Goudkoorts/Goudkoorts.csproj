@@ -48,7 +48,7 @@
     <Compile Include="Model\Dock.cs" />
     <Compile Include="Model\MarshallingYard.cs" />
     <Compile Include="Model\Cart.cs" />
-    <Compile Include="Model\GameObject.cs" />
+    <Compile Include="Model\Tile.cs" />
     <Compile Include="Model\Level.cs" />
     <Compile Include="Model\Movable.cs" />
     <Compile Include="Process\ParseController.cs" />

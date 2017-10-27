@@ -7,7 +7,7 @@ namespace Goudkoorts
 {
     public class Water : Standable
     {
-        public override bool MoveOnThis(Movable movable)
+        public override bool MoveOntoThis(Movable movable)
         {
             return MoveOnThis(movable as dynamic);
         }

@@ -5,13 +5,13 @@ using System.Text;
 
 namespace Goudkoorts
 {
-    public class Standable : GameObject
+    public class Standable : Tile
     {
         protected Movable _Movable;
 
-        private Standable _Next;
+        public Standable _Next { get; set; }
 
-        public override bool MoveOnThis(Movable movable)
+        public override bool MoveOntoThis(Movable movable)
         {
             if (_Movable == null)
             {
@@ -22,9 +22,17 @@ namespace Goudkoorts
                 return false;
         }
 
-        public void MoveOntoNext(Movable movable)
+        public virtual bool MoveOntoNext(Movable movable)
         {
-            _Next.MoveOnThis(movable);
+            if (_Next != null)
+                return _Next.MoveOntoThis(movable);
+            else
+                return false;
+        }
+
+        public bool IsTaken()
+        {
+            return _Movable == null;
         }
     }
 }

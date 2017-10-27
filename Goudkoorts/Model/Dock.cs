@@ -7,9 +7,9 @@ namespace Goudkoorts
 {
     public class Dock : Track
     {
-        public override bool MoveOnThis(Movable movable)
+        public override bool MoveOntoThis(Movable movable)
         {
-            return base.MoveOnThis(movable);
+            return base.MoveOntoThis(movable);
         }
 
         private bool MoveOnThis(Ship ship)
@@ -19,7 +19,7 @@ namespace Goudkoorts
 
         private bool MoveOnThis(Cart cart)
         {
-            if (base.MoveOnThis(cart))
+            if (base.MoveOntoThis(cart))
             {
                 if (_North is Water north)
                 {

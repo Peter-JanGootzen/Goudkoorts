@@ -11,6 +11,6 @@ namespace Goudkoorts
         private int CartList;
         private int ShipList;
 
-        private Tile _FirstTile;
+        private GameObject _FirstGameObject;
     }
 }

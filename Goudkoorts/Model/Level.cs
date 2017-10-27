@@ -7,9 +7,9 @@ namespace Goudkoorts
 {
     public class Level
     {
-        private int WarehouseList;
-        private int CartList;
-        private int ShipList;
+        public List<Warehouse> WarehouseList;
+        public List<Cart> CartList;
+        public List<Ship> ShipList;
 
         private GameObject _FirstGameObject;
     }

@@ -9,9 +9,15 @@ namespace Goudkoorts
     {
         protected Movable _Movable;
 
-        public bool EmptyCartOntoMovable()
+        public override bool MoveOnThis(Movable movable)
         {
-
+            if (_Movable == null)
+            {
+                _Movable = movable;
+                return true;
+            }
+            else
+                return false;
         }
     }
 }

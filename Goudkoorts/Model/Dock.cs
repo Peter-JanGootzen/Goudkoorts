@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Goudkoorts
 {
-    public class Dock : Standable
+    public class Dock : Track
     {
         public override bool MoveOnThis(Movable movable)
         {
@@ -19,12 +19,10 @@ namespace Goudkoorts
 
         private bool MoveOnThis(Cart cart)
         {
-            bool baseOutput = base.MoveOnThis(cart);
             if (base.MoveOnThis(cart))
             {
-                if (_North is Water)
+                if (_North is Water north)
                 {
-                    Water north = (Water)_North;
                     return north.DepositGoldOntoMovable(cart);
                 }
                 return false;

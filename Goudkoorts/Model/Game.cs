@@ -5,13 +5,14 @@ using System.Text;
 
 namespace Goudkoorts
 {
-    public class Movable
+    public class Game
     {
-        protected Standable _Standable;
-
-        public void Move()
+        public Level _Level
         {
-            _Standable.MoveOntoNext(this);
+            get => default(Level);
+            set
+            {
+            }
         }
     }
 }

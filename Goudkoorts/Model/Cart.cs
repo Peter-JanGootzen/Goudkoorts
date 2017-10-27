@@ -24,5 +24,10 @@ namespace Goudkoorts
             else
                 return false;
         }
+
+        public void SetTrack(Track track)
+        {
+            _Standable = track;
+        }
     }
 }

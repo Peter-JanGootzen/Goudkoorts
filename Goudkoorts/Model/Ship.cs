@@ -24,5 +24,10 @@ namespace Goudkoorts
             else
                 return false;
         }
+       
+        public void SetWater(Water water)
+        {
+            _Standable = water;
+        }
     }
 }

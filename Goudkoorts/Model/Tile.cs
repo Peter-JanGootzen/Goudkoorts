@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Goudkoorts
 {
-    public class Tile
+    public class Tile : GameObject
     {
         protected Tile _East;
         protected Tile _South;

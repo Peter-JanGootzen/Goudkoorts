@@ -7,6 +7,10 @@ namespace Goudkoorts
 {
     public class Switch : Track
     {
+        public Switch(short cornerType) : base(cornerType)
+        {
+
+        }
         private Track _ActiveTrack;
 
         public bool SwitchActiveTrack()

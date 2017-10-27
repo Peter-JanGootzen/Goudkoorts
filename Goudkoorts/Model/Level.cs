@@ -11,6 +11,6 @@ namespace Goudkoorts
         public List<Cart> CartList;
         public List<Ship> ShipList;
 
-        private Tile _FirstTile;
+        private GameObject _FirstGameObject;
     }
 }

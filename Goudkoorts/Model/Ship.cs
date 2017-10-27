@@ -18,7 +18,7 @@ namespace Goudkoorts
         {
             if (cart.Empty())
             {
-                GoldCount++;
+                _GoldCount++;
                 return true;
             }
             else

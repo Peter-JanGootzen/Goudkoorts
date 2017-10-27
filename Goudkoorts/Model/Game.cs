@@ -7,12 +7,8 @@ namespace Goudkoorts
 {
     public class Game
     {
-        public Level _Level
-        {
-            get => default(Level);
-            set
-            {
-            }
-        }
+        public Level _Level;
+
+        public int Points { get; set; }
     }
 }

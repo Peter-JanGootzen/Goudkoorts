@@ -9,6 +9,8 @@ namespace Goudkoorts
     {
         protected Movable _Movable;
 
+        private Standable _Next;
+
         public override bool MoveOnThis(Movable movable)
         {
             if (_Movable == null)
@@ -18,6 +20,11 @@ namespace Goudkoorts
             }
             else
                 return false;
+        }
+
+        public void MoveOntoNext(Movable movable)
+        {
+            _Next.MoveOnThis(movable);
         }
     }
 }

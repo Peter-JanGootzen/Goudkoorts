@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using Goudkoorts.Model;
 
-namespace Goudkoorts
+namespace Goudkoorts.Model
 {
     public class Ship : Movable, Model.IObservable
     {

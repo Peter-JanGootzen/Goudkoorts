@@ -7,10 +7,6 @@ namespace Goudkoorts
 {
     public class Dock : Track
     {
-        public Dock(short cornerCode) : base(cornerCode)
-        {
-        }
-
         public override bool MoveOntoThis(Movable movable)
         {
             return base.MoveOntoThis(movable);

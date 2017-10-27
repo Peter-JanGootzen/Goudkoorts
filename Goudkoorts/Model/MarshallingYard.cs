@@ -7,10 +7,6 @@ namespace Goudkoorts
 {
     public class MarshallingYard : Track
     {
-        public MarshallingYard(short cornerCode) : base(cornerCode)
-        {
-        }
-
         public override bool MoveOntoNext(Movable movable)
         {
             if (_Next == null)

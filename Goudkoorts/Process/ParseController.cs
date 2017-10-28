@@ -69,7 +69,7 @@ namespace Goudkoorts
                                 tiles[x, y] = new MarshallingYard(-1);
                                 break;
                             case "X":
-                                tiles[x, y] = new MarshallingYard();
+                                tiles[x, y] = new MarshallingYard(0);
                                 break;
                             case "x":
                                 tiles[x, y] = new MarshallingYard(true);

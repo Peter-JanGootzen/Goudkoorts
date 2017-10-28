@@ -9,10 +9,6 @@ namespace Goudkoorts.Model
     {
         bool FirstMarshallingYard;
 
-        public MarshallingYard()
-        {
-        }
-
         public MarshallingYard(short cornerCode) : base(cornerCode)
         {
         }

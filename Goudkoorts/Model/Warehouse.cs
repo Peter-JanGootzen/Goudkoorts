@@ -7,7 +7,7 @@ namespace Goudkoorts.Model
 {
     public class Warehouse : Tile
     {
-        Track _AdjecentTrack;
+        public Track _AdjecentTrack;
         // chance is a number between 1 and 100
         public bool SpawnCart(int chance)
         {

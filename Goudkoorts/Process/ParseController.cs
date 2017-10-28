@@ -59,6 +59,7 @@ namespace Goudkoorts
                                 Ship ship = new Ship();
                                 level.AddShip(ship);
                                 Water water = new Water(ship);
+                                ship._Standable = water;
                                 tiles[x, y] = water;
                                 break;
                             case " ":
@@ -224,14 +225,17 @@ namespace Goudkoorts
                     {
                         GenerateRoute(temp._North, temp);
                         GenerateRoute(temp._South, temp);
-                        temp._Next = (Track)Switch._North;
+                        
+                        temp._Next = (Track)Switch._South;
+                        Switch._FirstSwitchTrack = (Track)temp._Next;
+                        Switch._SecondSwitchTrack = (Track)temp._North;
                         Switch.SetActiveTrack((Track)temp._Next);
 
                     }
                     if (Switch.CornerCode == 2)
                     {
                         temp._Next = (Track)Switch._East;
-                        Switch.SetActiveTrack((Track)temp._East);
+                        Switch.SetActiveTrack((Track)temp._Next);
 
                     }
                 }
@@ -331,6 +335,7 @@ namespace Goudkoorts
                 {
                     temp = (Track)w._South;
                 }
+                w._AdjecentTrack = temp;
 
                 GenerateRoute(temp, null);
 

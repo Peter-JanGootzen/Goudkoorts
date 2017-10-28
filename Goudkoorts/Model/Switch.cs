@@ -5,8 +5,8 @@ namespace Goudkoorts.Model
     public class Switch : Track
     {
         private Track _ActiveTrack;
-        private Track _FirstSwitchTrack;
-        private Track _SecondSwitchTrack;
+        public Track _FirstSwitchTrack;
+        public Track _SecondSwitchTrack;
 
         public Switch(short cornerType) : base(cornerType)
         {

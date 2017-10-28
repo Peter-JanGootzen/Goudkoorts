@@ -27,9 +27,28 @@ namespace Goudkoorts
             return false;
         }
 
-        public void PrintLine(String line)
+        public void PrintChar(Char line)
+        {
+            Console.Write(line);
+        }
+        public void PrintString(String line)
         {
             Console.WriteLine(line);
+        }
+
+        public void SetColorForSwitch()
+        {
+            Console.BackgroundColor = ConsoleColor.Red;
+        }
+
+        public void ResetColor()
+        {
+            Console.ResetColor();
+        }
+
+        public void WriteEnter()
+        {
+            Console.WriteLine();
         }
     }
 }

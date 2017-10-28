@@ -10,10 +10,11 @@ namespace Goudkoorts.Model
     {
         List<Model.IObserver> ObserverList;
         private int _GoldCount;
+
         public int GoldCount
         {
             get { return _GoldCount; }
-            set { }
+            set { _GoldCount = value; }
         }
 
         public bool DepositGold(Cart cart)

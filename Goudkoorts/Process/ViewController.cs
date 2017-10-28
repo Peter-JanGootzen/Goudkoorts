@@ -17,22 +17,29 @@ namespace Goudkoorts.Process
 
         public void PrintCLI(Tile firstTile)
         {
-            String parseLine = "";
             Console.Clear();
             Tile currentxaxistile = firstTile;
             Tile currentyaxistile = firstTile;
             while (currentyaxistile != null)
             {
-                parseLine = parseLine + currentxaxistile.ToChar();
+                if (currentxaxistile is Switch)
+                {
+                    _CLI.SetColorForSwitch();
+                    _CLI.PrintChar(currentxaxistile.ToChar());
+                    _CLI.ResetColor();
+                }
+                else
+                {
+                    _CLI.PrintChar(currentxaxistile.ToChar());
+                }
 
                 if (currentxaxistile._East != null)
                     currentxaxistile = currentxaxistile._East;
                 else
                 {
-                    _CLI.PrintLine(parseLine);
-                    parseLine = "";
                     currentyaxistile = currentyaxistile._South;
                     currentxaxistile = currentyaxistile;
+                    _CLI.WriteEnter();
                 }
             }
         }

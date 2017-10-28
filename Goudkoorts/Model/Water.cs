@@ -11,6 +11,10 @@ namespace Goudkoorts.Model
 
         public Water(Movable movable) : base(movable)
         {
+            if(movable is Ship)
+            {
+                this.ship = (Ship)movable;
+            }
         }
         
         public Water()
@@ -42,6 +46,11 @@ namespace Goudkoorts.Model
             return false;
         }
 
-        public override char ToChar() => '█';
+        public override char ToChar()
+        {
+            if (ship != null)
+                return ship.ToChar();
+            return '█';
+        }
     }
 }

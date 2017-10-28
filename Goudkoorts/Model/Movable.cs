@@ -10,9 +10,6 @@ namespace Goudkoorts.Model
         protected Standable _Standable;
         public Standable Standable { get { return _Standable; } set { } }
 
-        public bool Move()
-        {
-            return _Standable.MoveOntoNext(this);
-        }
+        public bool Move() => _Standable.MoveOntoNext(this);
     }
 }

@@ -9,30 +9,24 @@ namespace Goudkoorts.Model
     {
         public override bool MoveOntoThis(Movable movable)
         {
-            return MoveOnThis(movable as dynamic);
+            return MoveOntoThis(movable as dynamic);
         }
 
-        private bool MoveOnThis(Ship ship)
-        {
-            return base.MoveOntoThis(ship);
-        }
+        private bool MoveOntoThis(Ship ship) => base.MoveOntoThis(ship);
 
-        private bool MoveOnThis(Cart cart)
-        {
-            return false;
-        }
+        private bool MoveOntoThis(Cart cart) => false;
 
         public bool DepositGoldOntoMovable(Cart cart)
         {
-            return DepositGoldOntoMovableDynamic(_Movable as dynamic, cart);
+            return DepositGoldOntoMovable(_Movable as dynamic, cart);
         }
 
-        private bool DepositGoldOntoMovableDynamic(Ship ship, Cart cart)
+        private bool DepositGoldOntoMovable(Ship ship, Cart depositCart)
         {
-            return ship.DepositGold(cart);
+            return ship.DepositGold(depositCart);
         }
 
-        private bool DepositGoldOntoMovableDynamic(Cart cart)
+        private bool DepositGoldOntoMovable(Cart cart, Cart depositCart)
         {
             return false;
         }

@@ -7,18 +7,16 @@ namespace Goudkoorts.Model
 {
     public class Warehouse : Tile
     {
+        Track _AdjecentTrack;
         public bool SpawnCart()
         {
-            if (_East is Standable east && east.IsTaken())
+            if (_AdjecentTrack.IsTaken())
             {
-                return east.MoveOntoThis(new Cart());
+                return _AdjecentTrack.MoveOntoThis(new Cart());
             }
             return false;
         }
 
-        public override char ToChar()
-        {
-            return 'W';
-        }
+        public override char ToChar() => 'W';
     }
 }

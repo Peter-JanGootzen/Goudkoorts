@@ -12,9 +12,6 @@ namespace Goudkoorts.Model
         protected Tile _West;
         protected Tile _North;
 
-        public virtual bool MoveOntoThis(Movable movable)
-        {
-            return false;
-        }
+        public virtual bool MoveOntoThis(Movable movable) => false;
     }
 }

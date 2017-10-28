@@ -14,20 +14,11 @@ namespace Goudkoorts.Model
         // 4 = West to North
         // 5 = West to South
 
-        public override bool MoveOntoThis(Movable movable)
-        {
-            return MoveOnThis(movable as dynamic);
-        }
+        public override bool MoveOntoThis(Movable movable) => MoveOnThis(movable as dynamic);
 
-        private bool MoveOnThis(Ship ship)
-        {
-            return false;
-        }
+        private bool MoveOntoThis(Ship ship) => false;
 
-        private bool MoveOnThis(Cart cart)
-        {
-            return base.MoveOntoThis(cart);
-        }
+        private bool MoveOnThis(Cart cart) => base.MoveOntoThis(cart);
 
         protected short cornerCode;
         public short CornerCode
@@ -36,9 +27,9 @@ namespace Goudkoorts.Model
             set { }
         }
 
-        public Track(short cornerType)
+        public Track(short cornerCode)
         {
-            this.cornerCode = cornerType;
+            this.cornerCode = cornerCode;
         }
 
         public Track()

@@ -29,25 +29,11 @@ namespace Goudkoorts.Model
                 return false;
         }
 
-        public void Notify()
-        {
-            ObserverList.ForEach(x => x.Update());
-        }
+        public void Notify() => ObserverList.ForEach(x => x.Update());
 
-        public void SetWater(Water water)
-        {
-            _Standable = water;
-        }
+        public void Subscribe(IObserver observer) => ObserverList.Add(observer);
 
-        public void Subscribe(IObserver observer)
-        {
-            ObserverList.Add(observer);
-        }
-
-        public void Unsubscribe(IObserver observer)
-        {
-            ObserverList.Remove(observer);
-        }
+        public void Unsubscribe(IObserver observer) => ObserverList.Remove(observer);
         public override char ToChar() => (char)GoldCount;
     }
 }

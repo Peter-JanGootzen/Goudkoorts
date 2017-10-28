@@ -11,7 +11,7 @@ namespace Goudkoorts.Presentation
 
         private void RefreshCLI(String modelString)
         {
-            modelString.ToList().ForEach(x =>
+            foreach(var x in modelString)
             {
                 if (x == 'S')
                 {

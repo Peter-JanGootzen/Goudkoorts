@@ -60,6 +60,7 @@ namespace Goudkoorts
                                 level.AddShip(ship);
                                 Water water = new Water(ship);
                                 ship._Standable = water;
+                                water._Movable = ship;
                                 tiles[x, y] = water;
                                 break;
                             case " ":

@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using Goudkoorts.Model;
 
 namespace Goudkoorts
 {
@@ -86,7 +87,7 @@ namespace Goudkoorts
                                 tiles[x, y] = new Track(4);
                                 break;
                             case "┌":
-                                tiles[x, y] = new Track(4);
+                                tiles[x, y] = new Track(3);
                                 break;
                             case "d":
                                 tiles[x, y] = new Dock();
@@ -192,17 +193,17 @@ namespace Goudkoorts
 
         }
 
-        public void GenerateRoute(Tile tile)
+        public void GenerateRoute(Tile tile, Track PreviousTrack)
         {
             Track temp = (Track)tile;
-            Track previousTrack = null;
+            Track previousTrack = PreviousTrack;
             while (temp.CornerCode != -1)
             {
                 if (temp._Next != null)
                 {
                     break;
                 }
-                if (previousTrack == null)
+                if(previousTrack == null)
                 {
                     temp._Next = (Track)temp._East;
                 }
@@ -210,17 +211,17 @@ namespace Goudkoorts
                 {
                     if (Switch.CornerCode == 5)
                     {
-                        GenerateRoute(temp._North);
-                        GenerateRoute(temp._South);
-                        temp._Next = (Track)Switch._South;
+                        GenerateRoute(temp._North, temp);
+                        GenerateRoute(temp._South, temp);
+                        temp._Next = (Track)Switch._North;
                         Switch.SetActiveTrack((Track)temp._Next);
 
                     }
                     if (Switch.CornerCode == 2)
                     {
                         temp._Next = (Track)Switch._East;
-                        Switch.SetActiveTrack((Track)temp._North);
-       
+                        Switch.SetActiveTrack((Track)temp._East);
+
                     }
                 }
                 else if (temp as dynamic is Track track)
@@ -299,15 +300,15 @@ namespace Goudkoorts
 
         public void GenerateTrack(List<Warehouse> warehouses)
         {
-            foreach(var w in warehouses)
+            foreach (var w in warehouses)
             {
 
                 Track temp = null;
                 if (w._North is Track)
                 {
-                   temp = (Track)w._North;
+                    temp = (Track)w._North;
                 }
-                else if(w._East is Track)
+                else if (w._East is Track)
                 {
                     temp = (Track)w._East;
                 }
@@ -320,9 +321,20 @@ namespace Goudkoorts
                     temp = (Track)w._South;
                 }
 
-                GenerateRoute(temp);
-                
+                GenerateRoute(temp, null);
+
+
+            }
+            foreach (var w in warehouses)
+            {
+                Track temp = (Track)w._East;
+                while (temp._Next != null)
+                {
+                    Console.Write(temp.ToChar());
+                    temp = (Track)temp._Next;
                 }
+                Console.WriteLine();
             }
         }
     }
+}

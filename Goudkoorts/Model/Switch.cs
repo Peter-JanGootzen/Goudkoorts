@@ -9,6 +9,10 @@ namespace Goudkoorts.Model
     {
         private Track _ActiveTrack;
 
+        public Switch(short cornerType) : base(cornerType)
+        {
+        }
+
         public bool SwitchActiveTrack()
         {
             if(_ActiveTrack == _North)

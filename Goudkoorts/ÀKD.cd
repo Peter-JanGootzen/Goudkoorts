@@ -21,41 +21,58 @@
     </TypeIdentifier>
   </Class>
   <Class Name="Goudkoorts.Model.Level" Collapsed="true">
-    <Position X="2.5" Y="8.25" Width="1.5" />
+    <Position X="2.5" Y="10" Width="1.5" />
+    <AssociationLine Name="_FirstTile" Type="Goudkoorts.Model.Tile" FixedToPoint="true">
+      <Path>
+        <Point X="3.312" Y="10.562" />
+        <Point X="3.312" Y="11.75" />
+      </Path>
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="0.173" Y="0.8" />
+      </MemberNameLabel>
+    </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AABAAAQAAAAAMAQAAAAQIAAAAAEAAAAAAAAAAAAEAAA=</HashCode>
+      <HashCode>AABAAAQAAAAAMAQAAAAQIAAAAAEAAgAAAAAAAAAEAAA=</HashCode>
       <FileName>Model\Level.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_FirstTile" />
+    </ShowAsAssociation>
   </Class>
   <Class Name="Goudkoorts.Model.Tile" Collapsed="true">
     <Position X="2.5" Y="11.75" Width="1.5" />
-    <AssociationLine Name="_East" Type="Goudkoorts.Model.Tile" FixedFromPoint="true" FixedToPoint="true">
+    <InheritanceLine Type="Goudkoorts.Model.GameObject" FixedToPoint="true">
+      <Path>
+        <Point X="5" Y="10.562" />
+        <Point X="5" Y="11.938" />
+        <Point X="4" Y="11.938" />
+      </Path>
+    </InheritanceLine>
+    <AssociationLine Name="_East" Type="Goudkoorts.Model.Tile" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
       <Path>
         <Point X="2.938" Y="12.441" />
-        <Point X="2.938" Y="13.125" />
-        <Point X="2.625" Y="13.125" />
+        <Point X="2.938" Y="12.771" />
+        <Point X="2.625" Y="12.771" />
         <Point X="2.625" Y="12.441" />
       </Path>
       <MemberNameLabel ManuallyPlaced="true">
-        <Position X="0.652" Y="-0.836" />
+        <Position X="-0.473" Y="-1.19" />
       </MemberNameLabel>
     </AssociationLine>
     <AssociationLine Name="_South" Type="Goudkoorts.Model.Tile">
       <MemberNameLabel ManuallyPlaced="true">
-        <Position X="0.443" Y="-0.482" />
+        <Position X="-0.474" Y="-0.784" />
       </MemberNameLabel>
     </AssociationLine>
     <AssociationLine Name="_West" Type="Goudkoorts.Model.Tile" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="3.375" Y="11.75" />
-        <Point X="3.375" Y="11.25" />
-        <Point X="3.333" Y="11.25" Type="JumpStart" />
-        <Point X="3.167" Y="11.25" Type="JumpEnd" />
-        <Point X="3.125" Y="11.25" />
-        <Point X="3.125" Y="11.75" />
+        <Point X="3.938" Y="11.75" />
+        <Point X="3.938" Y="11.5" />
+        <Point X="3.75" Y="11.5" />
+        <Point X="3.75" Y="11.75" />
       </Path>
       <MemberNameLabel ManuallyPlaced="true">
-        <Position X="1.091" Y="-0.546" />
+        <Position X="-0.492" Y="0.319" />
       </MemberNameLabel>
     </AssociationLine>
     <AssociationLine Name="_North" Type="Goudkoorts.Model.Tile" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
@@ -83,7 +100,7 @@
   <Class Name="Goudkoorts.Model.Switch" Collapsed="true">
     <Position X="8" Y="13.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAEAAAAAAAAAAAEIAAAAAAAAAABAAAAABAAAAACQAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAEIAAAAAEAAAABAAAAABAAAAACQAA=</HashCode>
       <FileName>Model\Switch.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -183,7 +200,7 @@
       </MemberNameLabel>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AEAQAAAAAAAAAAAAAAAAAAAkAABAAAAACACAAABAAAA=</HashCode>
+      <HashCode>AEAQAAAAAAAAAAAAAAAEAQA0AABAAAAACACAAABAAAA=</HashCode>
       <FileName>Process\GameController.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -194,7 +211,7 @@
   <Class Name="Goudkoorts.Presentation.CLI" Collapsed="true">
     <Position X="2.5" Y="4.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AEAAAAAAAAAAAAAAEAAAAAAAAAAAAAEAAAAAAAQAAAA=</HashCode>
+      <HashCode>AUAAAAAAAAAAAAAAAAAAIAAAAAAAAAEAAAAAAAQAAAA=</HashCode>
       <FileName>Presentation\CLI.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -214,7 +231,7 @@
       </MemberNameLabel>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAQAAQAAAAAAgAAAACAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAQAAQAAAAAAgAAAAAAAAAEgAAABAQAAAAAAAEAAAAA=</HashCode>
       <FileName>Model\Game.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -223,7 +240,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="Goudkoorts.Model.GameObject" Collapsed="true">
-    <Position X="2.5" Y="10" Width="1.5" />
+    <Position X="4.25" Y="10" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Model\GameObject.cs</FileName>

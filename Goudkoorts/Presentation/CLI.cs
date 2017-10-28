@@ -7,7 +7,7 @@ namespace Goudkoorts.Presentation
 {
     public class CLI : IView
     {
-        private String _LastModelString;
+        private String _LastModelString = "";
 
         private void RefreshCLI(String modelString)
         {

@@ -11,6 +11,11 @@ namespace Goudkoorts.Model
         List<Model.IObserver> ObserverList;
         private int _GoldCount;
 
+        public Ship()
+        {
+            ObserverList = new List<Model.IObserver>();
+        }
+
         public int GoldCount
         {
             get { return _GoldCount; }

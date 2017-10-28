@@ -11,9 +11,8 @@ namespace Goudkoorts.Model
         public List<Cart> CartList;
         public List<Ship> ShipList;
         public List<Switch> SwitchList;
+        public Water ShipSpawnWater;
 
-
-        private Tile _FirstTile;
         public Tile FirstTile {
             set
             {
@@ -23,6 +22,7 @@ namespace Goudkoorts.Model
             get { return _FirstTile; }
         }
 
+        private Tile _FirstTile;
         public Level()
         {
             WarehouseList = new List<Warehouse>();

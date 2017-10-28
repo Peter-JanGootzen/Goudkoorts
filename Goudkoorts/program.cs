@@ -6,14 +6,16 @@ using System.Threading.Tasks;
 
 namespace Goudkoorts
 {
-    class program
+    class Program
     {
         [STAThread]
 
         static void Main()
         {
-            ParseController pc = new ParseController();
-            pc.LoadLevel();
+            GameController gc = new GameController();
+            gc.StartGame();
+            gc.PrintGame(gc._Game._Level.GetFirstTile());
+            Console.ReadLine();
         }
     }
 }

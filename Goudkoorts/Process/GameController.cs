@@ -1,4 +1,5 @@
 ﻿using Goudkoorts.Model;
+using Goudkoorts.Process;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,28 +9,30 @@ namespace Goudkoorts
 {
     public class GameController
     {
-        public Game _Game
+        public Game _Game;
+        public ParseController _ParseController;
+        public ViewController _ViewController;
+        public void StartGame()
         {
-            get => default(Game);
-            set
-            {
-            }
+            _Game = new Game();
+            _ParseController = new ParseController();
+            _ViewController = new ViewController(this);
+            LoadLevel();
         }
 
-        public ParseController _ParseController
+        public void LoadLevel()
         {
-            get => default(ParseController);
-            set
-            {
-            }
+            _Game._Level = _ParseController.LoadLevel();
         }
 
-        public CLI _CLI
+       
+        public void PrintGame(Tile firstTile)
         {
-            get => default(CLI);
-            set
-            {
-            }
+            _ViewController.PrintCLI(firstTile);
+        }
+        public void SwitchTheSwitch(int switchInt)
+        {
+            _Game._Level.SwitchList[switchInt].SwitchActiveTrack();
         }
     }
 }

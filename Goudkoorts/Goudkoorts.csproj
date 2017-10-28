@@ -56,7 +56,8 @@
     <Compile Include="Model\Level.cs" />
     <Compile Include="Model\Movable.cs" />
     <Compile Include="Process\ParseController.cs" />
-    <Compile Include="program.cs" />
+    <Compile Include="Process\ViewController.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Model\Ship.cs" />
     <Compile Include="Model\Switch.cs" />

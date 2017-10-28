@@ -75,10 +75,14 @@ namespace Goudkoorts
                                 tiles[x, y] = new MarshallingYard(true);
                                 break;
                             case "┤":
-                                tiles[x, y] = new Switch(5);
+                                Switch Switch5 = new Switch(5);
+                                level.AddSwitch(Switch5);
+                                tiles[x, y] = Switch5;
                                 break;
                             case "├":
-                                tiles[x, y] = new Switch(2);
+                                Switch Switch2 = new Switch(2);
+                                level.AddSwitch(Switch2);
+                                tiles[x, y] = Switch2;
                                 break;
                             case "┐":
                                 tiles[x, y] = new Track(5);
@@ -96,10 +100,13 @@ namespace Goudkoorts
                                 tiles[x, y] = new Dock();
                                 break;
                             case "|":
-                                tiles[x, y] = new Track(0);
+                                tiles[x, y] = new Track(1);
                                 break;
                             case "─":
                                 tiles[x, y] = new Track(0);
+                                break;
+                            case "+":
+                                tiles[x, y] = new Track(-1);
                                 break;
                         }
                     }

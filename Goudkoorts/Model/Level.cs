@@ -10,6 +10,7 @@ namespace Goudkoorts.Model
         public List<Warehouse> WarehouseList;
         public List<Cart> CartList;
         public List<Ship> ShipList;
+        public List<Switch> SwitchList;
 
         private GameObject _FirstTile;
 
@@ -18,6 +19,7 @@ namespace Goudkoorts.Model
             WarehouseList = new List<Warehouse>();
             CartList = new List<Cart>();
             ShipList = new List<Ship>();
+            SwitchList = new List<Switch>();
         }
 
         public void AddWarehouse(Warehouse warehouse)
@@ -40,6 +42,19 @@ namespace Goudkoorts.Model
             if(tile != null)
             {
                 _FirstTile = tile;
+            }
+        }
+
+        public Tile GetFirstTile()
+        {
+            return (Tile)_FirstTile;
+        }
+
+        public void AddSwitch(Switch Switch)
+        {
+            if(Switch != null)
+            {
+                SwitchList.Add(Switch);
             }
         }
     }

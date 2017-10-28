@@ -41,8 +41,10 @@ namespace Goudkoorts.Model
         {
             switch (cornerCode)
             {
+                case -1:
+                    return '─';
                 case 0:
-                    return '-';
+                    return '─';
                 case 1:
                     return '|';
                 case 2:

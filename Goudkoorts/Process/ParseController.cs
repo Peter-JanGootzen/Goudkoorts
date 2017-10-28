@@ -13,7 +13,11 @@ namespace Goudkoorts
         public Level LoadLevel()
         {
             Level level = new Level();
-            Tile[,] levelArray = ParseLevelFile(level);
+            Tile[,] levelArray = null;
+            while (levelArray == null)
+            {
+                levelArray = ParseLevelFile(level);
+            }
             GenerateReferences(levelArray);
             level.FirstTile = levelArray[0, 0];
             GenerateTrack(level.WarehouseList);
@@ -24,7 +28,7 @@ namespace Goudkoorts
         {
             Tile[,] tiles;
             OpenFileDialog fileChooser = new OpenFileDialog();
-            if (fileChooser.ShowDialog() == DialogResult.OK)
+            while (fileChooser.ShowDialog() == DialogResult.OK)
             {
                 String[] horizontalText = File.ReadAllLines(fileChooser.FileName.ToString());
 
@@ -55,6 +59,7 @@ namespace Goudkoorts
                                 Ship ship = new Ship();
                                 level.AddShip(ship);
                                 Water water = new Water(ship);
+                                ship._Standable = water;
                                 tiles[x, y] = water;
                                 break;
                             case " ":
@@ -220,14 +225,17 @@ namespace Goudkoorts
                     {
                         GenerateRoute(temp._North, temp);
                         GenerateRoute(temp._South, temp);
-                        temp._Next = (Track)Switch._North;
+                        
+                        temp._Next = (Track)Switch._South;
+                        Switch._FirstSwitchTrack = (Track)temp._Next;
+                        Switch._SecondSwitchTrack = (Track)temp._North;
                         Switch.SetActiveTrack((Track)temp._Next);
 
                     }
                     if (Switch.CornerCode == 2)
                     {
                         temp._Next = (Track)Switch._East;
-                        Switch.SetActiveTrack((Track)temp._East);
+                        Switch.SetActiveTrack((Track)temp._Next);
 
                     }
                 }
@@ -327,6 +335,7 @@ namespace Goudkoorts
                 {
                     temp = (Track)w._South;
                 }
+                w._AdjecentTrack = temp;
 
                 GenerateRoute(temp, null);
 

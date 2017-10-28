@@ -73,6 +73,7 @@ namespace Goudkoorts.Process
                     currentxaxistile = currentxaxistile._East;
                 else
                 {
+                    ModelString += "\n";
                     currentyaxistile = currentyaxistile._South;
                     currentxaxistile = currentyaxistile;
                 }

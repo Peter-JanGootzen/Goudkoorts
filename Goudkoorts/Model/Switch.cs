@@ -8,6 +8,8 @@ namespace Goudkoorts.Model
     public class Switch : Track
     {
         private Track _ActiveTrack;
+        private Track _FirstSwitchTrack;
+        private Track _SecondSwitchTrack;
 
         public Switch(short cornerType) : base(cornerType)
         {
@@ -15,16 +17,16 @@ namespace Goudkoorts.Model
 
         public bool SwitchActiveTrack()
         {
-            if(_ActiveTrack == _North)
+            if(_ActiveTrack == _FirstSwitchTrack)
             {
-                _ActiveTrack = _South as Track;
+                _ActiveTrack = _SecondSwitchTrack;
                 if (cornerCode == 2)
                     cornerCode = 3;
                 else
                     cornerCode = 5;
             } else
             {
-                _ActiveTrack = _North as Track;
+                _ActiveTrack = _FirstSwitchTrack;
                 if (cornerCode == 3)
                     cornerCode = 2;
                 else

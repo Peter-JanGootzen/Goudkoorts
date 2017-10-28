@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Goudkoorts.Model
 {
-    public class Game : Model.IObserver
+    public class Game : IObserver
     {
         // If any of the model methods return false, the game has basicly been lost. Except for the MarshallingYard because those can stand still.
 

@@ -38,9 +38,6 @@ namespace Goudkoorts.Model
                 return false;
         }
 
-        public bool IsTaken()
-        {
-            return _Movable == null;
-        }
+        public bool IsTaken() => _Movable == null;
     }
 }

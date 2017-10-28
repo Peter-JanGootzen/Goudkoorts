@@ -15,6 +15,7 @@ namespace Goudkoorts.Model
         {
         }
 
+        Water _AdjecentWater;
         public override bool MoveOntoThis(Movable movable)
         {
             return base.MoveOntoThis(movable);
@@ -29,11 +30,7 @@ namespace Goudkoorts.Model
         {
             if (base.MoveOntoThis(cart))
             {
-                if (_North is Water north)
-                {
-                    return north.DepositGoldOntoMovable(cart);
-                }
-                return false;
+                return _AdjecentWater.DepositGoldOntoMovable(cart);
             }
             return false;
         }

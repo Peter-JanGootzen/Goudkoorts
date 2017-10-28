@@ -9,13 +9,13 @@ namespace Goudkoorts
     {
         private Ship ship;
 
-        public Water(Ship ship)
+        public Water(Movable movable) : base(movable)
         {
-            this.ship = ship;
         }
-
+        
         public Water()
         {
+
         }
 
         public override bool MoveOntoThis(Movable movable)

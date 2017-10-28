@@ -7,6 +7,10 @@ namespace Goudkoorts
 {
     public class MarshallingYard : Track
     {
+        public MarshallingYard()
+        {
+        }
+
         public MarshallingYard(short cornerCode) : base(cornerCode)
         {
         }

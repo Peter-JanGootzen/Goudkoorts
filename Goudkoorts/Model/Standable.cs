@@ -11,6 +11,14 @@ namespace Goudkoorts
 
         public Standable _Next { get; set; }
 
+        public Standable(Movable movable)
+        {
+            _Movable = movable;
+        }
+        public Standable()
+        {
+            
+        }
         public override bool MoveOntoThis(Movable movable)
         {
             if (_Movable == null)

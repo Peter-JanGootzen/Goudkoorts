@@ -11,7 +11,14 @@ namespace Goudkoorts
         public List<Cart> CartList;
         public List<Ship> ShipList;
 
-        private GameObject _FirstGameObject;
+        private GameObject _FirstTile;
+
+        public Level()
+        {
+            WarehouseList = new List<Warehouse>();
+            CartList = new List<Cart>();
+            ShipList = new List<Ship>();
+        }
 
         public void AddWarehouse(Warehouse warehouse)
         {
@@ -25,6 +32,14 @@ namespace Goudkoorts
             if (ship != null)
             {
                 ShipList.Add(ship);
+            }
+        }
+
+        public void SetFirstTile(Tile tile)
+        {
+            if(tile != null)
+            {
+                _FirstTile = tile;
             }
         }
     }

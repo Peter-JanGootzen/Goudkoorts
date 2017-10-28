@@ -12,8 +12,10 @@ namespace Goudkoorts
         public Level LoadLevel()
         {
             Level level = new Level();
-            ParseLevelFile(level);
-            
+            Tile[,] levelArray = ParseLevelFile(level);
+            GenerateReferences(levelArray);
+            level.SetFirstTile(levelArray[0, 0]);
+            GenerateTrack(level.WarehouseList);
             return level;
         }
 
@@ -23,10 +25,6 @@ namespace Goudkoorts
             OpenFileDialog fileChooser = new OpenFileDialog();
             if (fileChooser.ShowDialog() == DialogResult.OK)
             {
-                if (!Path.GetFileName(fileChooser.FileName).Substring(0, 7).Equals("goudkoorts"))
-                {
-                    return null;
-                }
                 String[] horizontalText = File.ReadAllLines(fileChooser.FileName.ToString());
 
                 int largestHeight = 0;
@@ -66,14 +64,17 @@ namespace Goudkoorts
                                 level.AddWarehouse(warehouse);
                                 tiles[x, y] = warehouse;
                                 break;
+                            case "x":
+                                tiles[x, y] = new MarshallingYard(-1);
+                                break;
                             case "X":
                                 tiles[x, y] = new MarshallingYard();
                                 break;
                             case "┤":
-                                tiles[x, y] = new Switch(3);
+                                tiles[x, y] = new Switch(5);
                                 break;
                             case "├":
-                                tiles[x, y] = new Switch(1);
+                                tiles[x, y] = new Switch(2);
                                 break;
                             case "┐":
                                 tiles[x, y] = new Track(5);
@@ -95,6 +96,9 @@ namespace Goudkoorts
                                 break;
                             case "─":
                                 tiles[x, y] = new Track(0);
+                                break;
+                            case "z":
+                                tiles[x, y] = new Track(-1);
                                 break;
                         }
                     }
@@ -188,9 +192,137 @@ namespace Goudkoorts
 
         }
 
-        public void GenerateTrack(Warehouse[] warehouses)
+        public void GenerateRoute(Tile tile)
         {
+            Track temp = (Track)tile;
+            Track previousTrack = null;
+            while (temp.CornerCode != -1)
+            {
+                if (temp._Next != null)
+                {
+                    break;
+                }
+                if (previousTrack == null)
+                {
+                    temp._Next = (Track)temp._East;
+                }
+                else if (temp as dynamic is Switch Switch)
+                {
+                    if (Switch.CornerCode == 5)
+                    {
+                        GenerateRoute(temp._North);
+                        GenerateRoute(temp._South);
+                        temp._Next = (Track)Switch._South;
+                        Switch.SetActiveTrack((Track)temp._Next);
 
+                    }
+                    if (Switch.CornerCode == 2)
+                    {
+                        temp._Next = (Track)Switch._East;
+                        Switch.SetActiveTrack((Track)temp._North);
+       
+                    }
+                }
+                else if (temp as dynamic is Track track)
+                {
+                    //rechte stukken
+                    if (track.CornerCode == 1 || track.CornerCode == 0)
+                    {
+                        if (track._South is Track && previousTrack == (Track)track._South)
+                        {
+                            temp._Next = (Track)track._North;
+                        }
+                        else if (track._North is Track && previousTrack == (Track)track._North)
+                        {
+                            temp._Next = (Track)track._South;
+                        }
+                        else if (track._East is Track && previousTrack == (Track)track._East)
+                        {
+                            temp._Next = (Track)track._West;
+                        }
+                        else if (track._West is Track && previousTrack == (Track)track._West)
+                        {
+                            temp._Next = (Track)track._East;
+
+                        }
+                    }
+                    //bochten
+                    else if (track.CornerCode == 2)
+                    {
+                        if (track._North is Track && previousTrack == (Track)track._North)
+                        {
+                            temp._Next = (Track)track._East;
+                        }
+                        else if (track._East is Track && previousTrack == (Track)track._East)
+                        {
+                            temp._Next = (Track)track._North;
+                        }
+                    }
+                    else if (track.CornerCode == 3)
+                    {
+                        if (track._South is Track && previousTrack == (Track)track._South)
+                        {
+                            temp._Next = (Track)track._East;
+                        }
+                        else if (track._East is Track && previousTrack == (Track)track._East)
+                        {
+                            temp._Next = (Track)track._South;
+                        }
+                    }
+                    else if (track.CornerCode == 4)
+                    {
+                        if (track._West is Track && previousTrack == (Track)track._West)
+                        {
+                            temp._Next = (Track)track._North;
+                        }
+                        else if (track._North is Track && previousTrack == (Track)track._North)
+                        {
+                            temp._Next = (Track)track._West;
+                        }
+                    }
+                    else if (track.CornerCode == 5)
+                    {
+                        if (track._West is Track && previousTrack == (Track)track._West)
+                        {
+                            temp._Next = (Track)track._South;
+                        }
+                        else if (track._South is Track && previousTrack == (Track)track._South)
+                        {
+                            temp._Next = (Track)track._West;
+                        }
+                    }
+                }
+                previousTrack = temp;
+                temp = (Track)temp._Next;
+            }
+        }
+
+        public void GenerateTrack(List<Warehouse> warehouses)
+        {
+            foreach(var w in warehouses)
+            {
+
+                Track temp = null;
+                if (w._North is Track)
+                {
+                   temp = (Track)w._North;
+                }
+                else if(w._East is Track)
+                {
+                    temp = (Track)w._East;
+                }
+                else if (w._West is Track)
+                {
+                    temp = (Track)w._West;
+                }
+                else if (w._South is Track)
+                {
+                    temp = (Track)w._South;
+                }
+
+                GenerateRoute(temp);
+                
+                }
+            }
         }
     }
-}

@@ -7,6 +7,10 @@ namespace Goudkoorts
 {
     public class Dock : Track
     {
+        public Dock()
+        {
+        }
+
         public Dock(short cornerCode) : base(cornerCode)
         {
         }

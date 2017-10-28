@@ -31,5 +31,10 @@ namespace Goudkoorts
         {
             return base.MoveOntoThis(movable);
         }
+
+        public void SetActiveTrack(Track activeTrack)
+        {
+            _ActiveTrack = activeTrack;
+        }
     }
 }

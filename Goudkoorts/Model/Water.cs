@@ -8,6 +8,7 @@ namespace Goudkoorts.Model
     public class Water : Standable
     {
         private Ship _Ship;
+        public Dock _AdjecentDock;
 
         public Water(Ship ship)
         {
@@ -24,6 +25,14 @@ namespace Goudkoorts.Model
         private bool MoveOntoThis(Ship ship) => base.MoveOntoThis(ship);
 
         private bool MoveOntoThis(Cart cart) => false;
+
+        public override bool MoveOntoNext()
+        {
+            if (_AdjecentDock != null && !_Ship.IsFull())
+                return true;
+            else
+                return base.MoveOntoNext();
+        }
 
         public bool DepositGoldOntoMovable(Cart cart)
         {

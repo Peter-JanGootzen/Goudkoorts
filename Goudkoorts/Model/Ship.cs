@@ -22,6 +22,11 @@ namespace Goudkoorts.Model
             set { _GoldCount = value; }
         }
 
+        public bool IsFull()
+        {
+            return _GoldCount == 8;
+        }
+
         public bool DepositGold(Cart cart)
         {
             if (cart.Empty())

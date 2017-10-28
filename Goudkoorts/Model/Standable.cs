@@ -30,12 +30,16 @@ namespace Goudkoorts.Model
                 return false;
         }
 
-        public virtual bool MoveOntoNext(Movable movable)
+        public virtual bool MoveOntoNext()
         {
             if (_Next != null)
-                return _Next.MoveOntoThis(movable);
+                return _Next.MoveOntoThis(_Movable);
             else
-                return false;
+            {
+                _Movable._Standable = null;
+                _Movable = null;
+                return true;    
+            }
         }
 
         public bool IsTaken() => _Movable == null;

@@ -16,24 +16,16 @@
   <Class Name="Goudkoorts.Model.Track" Collapsed="true">
     <Position X="9" Y="12" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AEAAAABAAAAAAAEAAAAgAAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AEAAAABAAAAAAAEAAAAAAAAAAAABAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Model\Track.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Goudkoorts.Model.Level" Collapsed="true">
     <Position X="2.5" Y="8.25" Width="1.5" />
-    <AssociationLine Name="_FirstGameObject" Type="Goudkoorts.Model.GameObject">
-      <MemberNameLabel ManuallyPlaced="true">
-        <Position X="0.141" Y="0.466" />
-      </MemberNameLabel>
-    </AssociationLine>
     <TypeIdentifier>
-      <HashCode>IAAAAAQAAAAAIAAAAAAAAAAAAAEAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AABAAAYAAAAAMAQAAAAQAAAgAAEAAAAAAAAAAAAEAAA=</HashCode>
       <FileName>Model\Level.cs</FileName>
     </TypeIdentifier>
-    <ShowAsAssociation>
-      <Field Name="_FirstGameObject" />
-    </ShowAsAssociation>
   </Class>
   <Class Name="Goudkoorts.Model.Tile" Collapsed="true">
     <Position X="2.5" Y="11.75" Width="1.5" />
@@ -91,7 +83,7 @@
   <Class Name="Goudkoorts.Model.Switch" Collapsed="true">
     <Position X="8" Y="13.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAEAAAAAAAAAAAAAAAAAAAAAAABAAAAABAAAAAAAAA=</HashCode>
+      <HashCode>AAAEAAAAAAAAAAAAIAAAAAAAAAABAAAAABAAAAACQAA=</HashCode>
       <FileName>Model\Switch.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -107,7 +99,7 @@
       </MemberNameLabel>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAAAgAAAAIAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAA=</HashCode>
+      <HashCode>AAAAgAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Model\Movable.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -117,7 +109,7 @@
   <Class Name="Goudkoorts.Model.Ship" Collapsed="true">
     <Position X="6.25" Y="9" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAEAQAAAAAAAAAACABBCQAQAAAAAACA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAEAQAAAAAAAAAACABBCQAQAAAAAAAA=</HashCode>
       <FileName>Model\Ship.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -125,35 +117,35 @@
   <Class Name="Goudkoorts.Model.Water" Collapsed="true">
     <Position X="6.25" Y="13.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAIAAAAEABAAgAAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAEABAAAAAAAAAABAAAAgAAAAAAAAAA=</HashCode>
       <FileName>Model\Water.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Goudkoorts.Model.Spacer" Collapsed="true">
     <Position X="3.25" Y="13.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Model\Spacer.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Goudkoorts.Model.Warehouse" Collapsed="true">
     <Position X="1.5" Y="13.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAACQA=</HashCode>
       <FileName>Model\Warehouse.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Goudkoorts.Model.MarshallingYard" Collapsed="true">
     <Position X="10" Y="13.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAEEAAAAAAAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAEEAAAAAAAAAAAABAAAAIAAAAAAAAAA=</HashCode>
       <FileName>Model\MarshallingYard.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Goudkoorts.Model.Dock" Collapsed="true">
     <Position X="9" Y="11" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAEAAAAgAAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAEAACAgAAAAAAABAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Model\Dock.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -190,32 +182,26 @@
         <Position X="0.214" Y="-0.357" />
       </MemberNameLabel>
     </AssociationLine>
-    <AssociationLine Name="_CLI" Type="Goudkoorts.CLI">
-      <MemberNameLabel ManuallyPlaced="true">
-        <Position X="0.193" Y="0.237" />
-      </MemberNameLabel>
-    </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAAQAAAAAAAAAAAAAAAAAAAAAABAAAAAAIAAAAAAAAA=</HashCode>
+      <HashCode>AUAQAAAAAAAAAAAAAAAAAAAkAABAAAAAAAAAAABAAAA=</HashCode>
       <FileName>Process\GameController.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Property Name="_Game" />
-      <Property Name="_ParseController" />
-      <Property Name="_CLI" />
+      <Field Name="_Game" />
+      <Field Name="_ParseController" />
     </ShowAsAssociation>
   </Class>
   <Class Name="Goudkoorts.CLI" Collapsed="true">
     <Position X="2.5" Y="4.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAIAAACAAAAEAEAAAAAAAAAAAAQAAAAAAAAAAAgI=</HashCode>
       <FileName>Presentation\CLI.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Goudkoorts.ParseController" Collapsed="true">
     <Position X="5.5" Y="5.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAEAAAAAAAAAAAAEAAAAAAAAAAAAEgAAACA=</HashCode>
       <FileName>Process\ParseController.cs</FileName>
     </TypeIdentifier>
   </Class>

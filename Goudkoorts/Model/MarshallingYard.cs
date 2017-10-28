@@ -18,12 +18,12 @@ namespace Goudkoorts.Model
             FirstMarshallingYard = first;
         }
 
-        public override bool MoveOntoNext(Movable movable)
+        public override bool MoveOntoNext()
         {
             if (_Next == null)
                 return true;
             else
-                return _Next.MoveOntoThis(movable);
+                return _Next.MoveOntoThis(_Movable);
         }
 
         // If this MarshallingYard has been taken after the moving and the Tile to the East is a Track, then all the MarshallingYards are taken.

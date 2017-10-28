@@ -20,19 +20,30 @@ namespace Goudkoorts
             LoadLevel();
         }
 
-        public void LoadLevel()
+        private void LoadLevel()
         {
             _Game._Level = _ParseController.LoadLevel();
         }
 
-       
-        public void PrintGame(Tile firstTile)
+
+        private void PrintGame(Tile firstTile)
         {
             _ViewController.PrintCLI(firstTile);
         }
-        public void SwitchTheSwitch(int switchInt)
+        private void SwitchTheSwitch(int switchInt)
         {
             _Game._Level.SwitchList[switchInt].SwitchActiveTrack();
+        }
+
+        private void CheckCartsDespawned()
+        {
+            _Game._Level.CartList.ForEach(x =>
+            {
+                if (x._Standable == null)
+                {
+                    x = null;
+                }
+            });
         }
     }
 }

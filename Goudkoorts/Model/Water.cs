@@ -16,11 +16,6 @@ namespace Goudkoorts.Model
                 this.ship = (Ship)movable;
             }
         }
-        
-        public Water()
-        {
-
-        }
 
         public override bool MoveOntoThis(Movable movable)
         {

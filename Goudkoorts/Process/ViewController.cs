@@ -17,7 +17,6 @@ namespace Goudkoorts.Process
 
         public void PrintCLI(Tile firstTile)
         {
-            Console.Clear();
             Tile currentxaxistile = firstTile;
             Tile currentyaxistile = firstTile;
             while (currentyaxistile != null)
@@ -44,5 +43,23 @@ namespace Goudkoorts.Process
             }
         }
 
+        public void GenerateModelString(Tile firstTile)
+        {
+            String ModelString = "";
+            Tile currentxaxistile = firstTile;
+            Tile currentyaxistile = firstTile;
+            while (currentyaxistile != null)
+            {
+                ModelString += currentxaxistile.ToChar();
+
+                if (currentxaxistile._East != null)
+                    currentxaxistile = currentxaxistile._East;
+                else
+                {
+                    currentyaxistile = currentyaxistile._South;
+                    currentxaxistile = currentyaxistile;
+                }
+            }
+        }
     }
 }

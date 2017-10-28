@@ -32,6 +32,7 @@ namespace Goudkoorts
             while (true)
             {
                 _Game.FlipSwitch(_ViewController.GetInput());
+                SendModelStringToView();
             }
         }
 
@@ -39,10 +40,11 @@ namespace Goudkoorts
         {
             while (true)
             {
-                if (_Game.MoveMovables() || _Game.SpawnCarts())
+                if (!(_Game.MoveMovables() || _Game.SpawnCarts()))
                 {
                     break;
                 }
+                SendModelStringToView();
                 Thread.Sleep((int)(_Game.Points * 0.1));
             }
             _GameLoopThread.Abort();

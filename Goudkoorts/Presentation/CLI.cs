@@ -13,12 +13,15 @@ namespace Goudkoorts.Presentation
         {
             modelString.ToList().ForEach(x =>
             {
-                if (x.Equals('S'))
+                if (x == 'S')
+                {
                     Console.BackgroundColor = ConsoleColor.Red;
-                else if (x.Equals('\n')) // For a new line, idk what the new line is in the modelString
+                }
+                else if (x == '\n') // For a new line, idk what the new line is in the modelString
                 {
                     Console.WriteLine();
-                } else
+                }
+                else
                 {
                     Console.WriteLine(x);
                     Console.ResetColor();
@@ -52,6 +55,7 @@ namespace Goudkoorts.Presentation
         {
             Console.Clear();
             Console.WriteLine(message);
+            Console.ReadLine();
         }
 
         public void ReceiveModelString(string modelString)
@@ -59,9 +63,7 @@ namespace Goudkoorts.Presentation
             if (_LastModelString.Equals(modelString))
                 return;
             else
-            {
                 RefreshCLI(modelString);
-            }
         }
     }
 }

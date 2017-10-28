@@ -16,8 +16,7 @@ namespace Goudkoorts.Model
         public Tile FirstTile {
             set
             {
-                if (_FirstTile != null)
-                    _FirstTile = value;
+                _FirstTile = value;
             }
             get { return _FirstTile; }
         }

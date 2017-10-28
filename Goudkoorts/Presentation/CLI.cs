@@ -23,7 +23,7 @@ namespace Goudkoorts.Presentation
                 }
                 else
                 {
-                    Console.WriteLine(x);
+                    Console.Write(x);
                     Console.ResetColor();
                 }
 

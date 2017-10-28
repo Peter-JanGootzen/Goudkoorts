@@ -339,16 +339,6 @@ namespace Goudkoorts
 
 
             }
-            foreach (var w in warehouses)
-            {
-                Track temp = (Track)w._East;
-                while (temp._Next != null)
-                {
-                    Console.Write(temp.ToString());
-                    temp = (Track)temp._Next;
-                }
-                Console.WriteLine();
-            }
         }
     }
 }

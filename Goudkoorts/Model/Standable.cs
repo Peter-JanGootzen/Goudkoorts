@@ -17,8 +17,8 @@ namespace Goudkoorts.Model
         }
         public Standable()
         {
-            
         }
+
         public override bool MoveOntoThis(Movable movable)
         {
             if (_Movable == null)

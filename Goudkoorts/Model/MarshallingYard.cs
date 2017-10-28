@@ -8,7 +8,6 @@ namespace Goudkoorts.Model
     public class MarshallingYard : Track
     {
         bool FirstMarshallingYard;
-        private bool v;
 
         public MarshallingYard()
         {

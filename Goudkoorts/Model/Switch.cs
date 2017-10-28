@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace Goudkoorts.Model
 {
@@ -15,7 +12,7 @@ namespace Goudkoorts.Model
         {
         }
 
-        public bool SwitchActiveTrack()
+        public bool Flip()
         {
             if(_ActiveTrack == _FirstSwitchTrack)
             {

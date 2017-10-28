@@ -8,9 +8,11 @@ namespace Goudkoorts.Model
     public class Warehouse : Tile
     {
         Track _AdjecentTrack;
-        public bool SpawnCart()
+        // chance is a number between 1 and 100
+        public bool SpawnCart(int chance)
         {
-            if (_AdjecentTrack.IsTaken())
+            Random r = new Random();
+            if (!_AdjecentTrack.IsTaken() && r.Next(1, 100) < chance)
             {
                 return _AdjecentTrack.MoveOntoThis(new Cart());
             }

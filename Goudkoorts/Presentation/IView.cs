@@ -9,5 +9,6 @@ namespace Goudkoorts.Presentation
     interface IView
     {
         void ReceiveModelString(String modelString);
+        int GetInput();
     }
 }

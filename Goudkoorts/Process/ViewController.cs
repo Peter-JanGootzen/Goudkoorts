@@ -45,6 +45,16 @@ namespace Goudkoorts.Process
             }
         } */
 
+        public int GetInput()
+        {
+            return _CLI.GetInput();
+        }
+
+        public void DisplayGameOver(int points)
+        {
+            _CLI.DisplayMessage("Game Over\n You ended with " + points + " points!");
+        }
+        
         public void SendModelStringToView(Tile firstTile)
         {
             _CLI.ReceiveModelString(GenerateModelString(firstTile));

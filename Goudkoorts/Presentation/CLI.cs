@@ -28,9 +28,13 @@ namespace Goudkoorts.Presentation
             _LastModelString = modelString;
         }
 
-        public int CatchSwitchInput()
+        public int GetInput()
         {
-            int.TryParse(Console.ReadKey().Key.ToString(), out int input);
+            int input;
+            do
+            {
+                int.TryParse(Console.ReadKey().Key.ToString(), out input);
+            } while (!(input > 0 && input < 10));
             return input;
             /* if (int.TryParse(key.ToString(), out switchInt))
             {
@@ -42,6 +46,12 @@ namespace Goudkoorts.Presentation
             }
             return false;
             */
+        }
+
+        public void DisplayMessage(String message)
+        {
+            Console.Clear();
+            Console.WriteLine(message);
         }
 
         public void ReceiveModelString(string modelString)

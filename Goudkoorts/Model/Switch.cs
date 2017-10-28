@@ -7,10 +7,10 @@ namespace Goudkoorts
 {
     public class Switch : Track
     {
-        public Switch(short cornerType) : base(cornerType)
+        public Switch(short cornerCode) : base(cornerCode)
         {
-
         }
+
         private Track _ActiveTrack;
 
         public bool SwitchActiveTrack()
@@ -18,13 +18,11 @@ namespace Goudkoorts
             if(_ActiveTrack == _North)
             {
                 _ActiveTrack = _South as Track;
-                Track north = _North as Track;
-                north._Next = null;
+                // change cornerCode
             } else
             {
                 _ActiveTrack = _North as Track;
-                Track south = _South as Track;
-                south._Next = null;
+                // change cornerCode
             }
             return true;
         }

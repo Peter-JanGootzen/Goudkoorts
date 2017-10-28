@@ -6,7 +6,7 @@ using Goudkoorts.Model;
 
 namespace Goudkoorts.Model
 {
-    public class Ship : Movable, Model.IObservable
+    public class Ship : Movable, IObservable
     {
         List<Model.IObserver> ObserverList;
         private int _GoldCount;

@@ -37,6 +37,6 @@ namespace Goudkoorts.Model
                 return true;
         }
 
-        public override char ToChar() => 'X';
+        public override String ToString() => "X";
     }
 }

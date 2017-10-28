@@ -48,6 +48,7 @@
     <Compile Include="Model\IObserver.cs" />
     <Compile Include="Presentation\CLI.cs" />
     <Compile Include="Model\Game.cs" />
+    <Compile Include="Presentation\IView.cs" />
     <Compile Include="Process\GameController.cs" />
     <Compile Include="Model\Dock.cs" />
     <Compile Include="Model\MarshallingYard.cs" />

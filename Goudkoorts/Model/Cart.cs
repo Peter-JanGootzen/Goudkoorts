@@ -30,6 +30,6 @@ namespace Goudkoorts.Model
             _Standable = track;
         }
 
-        public override char ToChar() => 'C';
+        public override String ToString() => "C";
     }
 }

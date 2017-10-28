@@ -7,13 +7,13 @@ namespace Goudkoorts.Model
 {
     public class Water : Standable
     {
-        private Ship ship;
+        private Ship _Ship;
 
         public Water(Movable movable) : base(movable)
         {
             if(movable is Ship)
             {
-                this.ship = (Ship)movable;
+                this._Ship = (Ship)movable;
             }
         }
 
@@ -41,11 +41,11 @@ namespace Goudkoorts.Model
             return false;
         }
 
-        public override char ToChar()
+        public override String ToString()
         {
-            if (ship != null)
-                return ship.ToChar();
-            return '█';
+            if (_Ship != null)
+                return _Ship.ToString();
+            return "█";
         }
     }
 }

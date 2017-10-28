@@ -7,6 +7,6 @@ namespace Goudkoorts.Model
 {
     public abstract class GameObject
     {
-        public abstract char ToChar();
+        public abstract String ToString();
     }
 }

@@ -37,26 +37,31 @@ namespace Goudkoorts.Model
             cornerCode = 0;
         }
 
-        public override char ToChar()
+        public override String ToString()
         {
-            switch (cornerCode)
+            if (_Movable != null)
+                return _Movable.ToString();
+            else
             {
-                case -1:
-                    return '─';
-                case 0:
-                    return '─';
-                case 1:
-                    return '|';
-                case 2:
-                    return '└';
-                case 3:
-                    return '┌';
-                case 4:
-                    return '┘';
-                case 5:
-                    return '┐';
-                default:
-                    return ' ';
+                switch (cornerCode)
+                {
+                    case -1:
+                        return "─";
+                    case 0:
+                        return "─";
+                    case 1:
+                        return "|";
+                    case 2:
+                        return "└";
+                    case 3:
+                        return "┌";
+                    case 4:
+                        return "┘";
+                    case 5:
+                        return "┐";
+                    default:
+                        return " ";
+                }
             }
         }
     }

@@ -47,5 +47,10 @@ namespace Goudkoorts.Model
         {
             _ActiveTrack = activeTrack;
         }
+
+        public override String ToString()
+        {
+            return "S" + base.ToString();
+        }
     }
 }

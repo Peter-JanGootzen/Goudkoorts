@@ -35,6 +35,6 @@ namespace Goudkoorts.Model
         public void Subscribe(IObserver observer) => ObserverList.Add(observer);
 
         public void Unsubscribe(IObserver observer) => ObserverList.Remove(observer);
-        public override char ToChar() => (char)GoldCount;
+        public override String ToString() => "" + _GoldCount;
     }
 }

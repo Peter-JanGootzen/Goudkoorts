@@ -3,20 +3,36 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Goudkoorts
+namespace Goudkoorts.Presentation
 {
-    public class CLI
+    public class CLI : IView
     {
-        private GameController controller;
-        public CLI(GameController controller)
+        private String _LastModelString;
+
+        private void RefreshCLI(String modelString)
         {
-            this.controller = controller;
+            modelString.ToList().ForEach(x =>
+            {
+                if (x.Equals('S'))
+                    Console.BackgroundColor = ConsoleColor.Red;
+                else if (x.Equals('\n')) // For a new line, idk what the new line is in the modelString
+                {
+                    Console.WriteLine();
+                } else
+                {
+                    Console.WriteLine(x);
+                    Console.ResetColor();
+                }
+
+            });
+            _LastModelString = modelString;
         }
-        public bool CatchSwitchInput()
+
+        public int CatchSwitchInput()
         {
-            ConsoleKey key = Console.ReadKey().Key;
-            int switchInt;
-            if (int.TryParse(key.ToString(), out switchInt))
+            int.TryParse(Console.ReadKey().Key.ToString(), out int input);
+            return input;
+            /* if (int.TryParse(key.ToString(), out switchInt))
             {
                 if (switchInt > 0 && switchInt < controller._Game._Level.SwitchList.Count)
                 {
@@ -25,30 +41,17 @@ namespace Goudkoorts
                 }
             }
             return false;
+            */
         }
 
-        public void PrintChar(Char line)
+        public void ReceiveModelString(string modelString)
         {
-            Console.Write(line);
-        }
-        public void PrintString(String line)
-        {
-            Console.WriteLine(line);
-        }
-
-        public void SetColorForSwitch()
-        {
-            Console.BackgroundColor = ConsoleColor.Red;
-        }
-
-        public void ResetColor()
-        {
-            Console.ResetColor();
-        }
-
-        public void WriteEnter()
-        {
-            Console.WriteLine();
+            if (_LastModelString.Equals(modelString))
+                return;
+            else
+            {
+                RefreshCLI(modelString);
+            }
         }
     }
 }

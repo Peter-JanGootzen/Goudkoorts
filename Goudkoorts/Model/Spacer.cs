@@ -7,6 +7,6 @@ namespace Goudkoorts.Model
 {
     public class Spacer : Tile
     {
-        public override char ToChar() => ' ';
+        public override String ToString() => " ";
     }
 }

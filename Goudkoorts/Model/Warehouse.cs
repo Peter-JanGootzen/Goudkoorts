@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Goudkoorts
+namespace Goudkoorts.Model
 {
     public class Warehouse : Tile
     {
@@ -14,6 +14,11 @@ namespace Goudkoorts
                 return east.MoveOntoThis(new Cart());
             }
             return false;
+        }
+
+        public override char ToChar()
+        {
+            return 'W';
         }
     }
 }

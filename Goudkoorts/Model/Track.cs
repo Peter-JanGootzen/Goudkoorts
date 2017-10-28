@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Goudkoorts
+namespace Goudkoorts.Model
 {
     public class Track : Standable
     {
@@ -13,6 +13,21 @@ namespace Goudkoorts
         // 3 = South to East
         // 4 = West to North
         // 5 = West to South
+
+        public override bool MoveOntoThis(Movable movable)
+        {
+            return MoveOnThis(movable as dynamic);
+        }
+
+        private bool MoveOnThis(Ship ship)
+        {
+            return false;
+        }
+
+        private bool MoveOnThis(Cart cart)
+        {
+            return base.MoveOntoThis(cart);
+        }
 
         protected short cornerCode;
         public short CornerCode
@@ -29,6 +44,26 @@ namespace Goudkoorts
         public Track()
         {
             cornerCode = 0;
+        }
+        public override char ToChar()
+        {
+            switch (cornerCode)
+            {
+                case 0:
+                    return '-';
+                case 1:
+                    return '|';
+                case 2:
+                    return '└';
+                case 3:
+                    return '┌';
+                case 4:
+                    return '┘';
+                case 5:
+                    return '┐';
+                default:
+                    return ' ';
+            }
         }
     }
 }

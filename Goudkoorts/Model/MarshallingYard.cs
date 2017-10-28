@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Goudkoorts
+namespace Goudkoorts.Model
 {
     public class MarshallingYard : Track
     {
@@ -33,5 +33,7 @@ namespace Goudkoorts
             else
                 return true;
         }
+
+        public override char ToChar() => 'X';
     }
 }

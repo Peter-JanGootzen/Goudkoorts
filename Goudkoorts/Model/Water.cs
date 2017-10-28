@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Goudkoorts
+namespace Goudkoorts.Model
 {
     public class Water : Standable
     {
@@ -25,8 +25,7 @@ namespace Goudkoorts
 
         private bool MoveOnThis(Ship ship)
         {
-            // Check if it's empty and stuff
-            return true;
+            return base.MoveOntoThis(ship);
         }
 
         private bool MoveOnThis(Cart cart)
@@ -48,5 +47,7 @@ namespace Goudkoorts
         {
             return false;
         }
+
+        public override char ToChar() => '█';
     }
 }

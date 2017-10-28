@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Goudkoorts
+namespace Goudkoorts.Model
 {
-    public class Tile : GameObject
+    public abstract class Tile : GameObject
     {
         public Tile _East;
         public Tile _South;

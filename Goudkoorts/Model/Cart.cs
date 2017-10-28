@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Goudkoorts
+namespace Goudkoorts.Model
 {
     public class Cart : Movable
     {
@@ -29,5 +29,7 @@ namespace Goudkoorts
         {
             _Standable = track;
         }
+
+        public override char ToChar() => 'C';
     }
 }

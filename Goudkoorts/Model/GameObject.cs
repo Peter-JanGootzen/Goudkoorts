@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Goudkoorts
+namespace Goudkoorts.Model
 {
-    public class GameObject
+    public abstract class GameObject
     {
+        public abstract char ToChar();
     }
 }

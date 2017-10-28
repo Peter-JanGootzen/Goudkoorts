@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace Goudkoorts.Model
 {
-    public class Spacer : Tile
+    public interface IObserver
     {
-        public override char ToChar() => ' ';
+        void Update();
     }
 }

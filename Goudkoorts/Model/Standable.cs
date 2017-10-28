@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Goudkoorts
+namespace Goudkoorts.Model
 {
-    public class Standable : Tile
+    public abstract class Standable : Tile
     {
         protected Movable _Movable;
 

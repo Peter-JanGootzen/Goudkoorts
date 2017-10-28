@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Goudkoorts
+namespace Goudkoorts.Model
 {
     public class Dock : Track
     {
@@ -37,5 +37,7 @@ namespace Goudkoorts
             }
             return false;
         }
+
+        public override char ToChar() => 'D';
     }
 }

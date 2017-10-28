@@ -43,7 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GameObject.cs" />
+    <Compile Include="Model\GameObject.cs" />
+    <Compile Include="Model\IObservable.cs" />
+    <Compile Include="Model\IObserver.cs" />
     <Compile Include="Presentation\CLI.cs" />
     <Compile Include="Model\Game.cs" />
     <Compile Include="Process\GameController.cs" />

@@ -13,7 +13,6 @@ namespace Goudkoorts.Model
         {
             if(movable is Ship)
             {
-                movable = new Ship(this);
                 this._Ship = (Ship)movable;
             }
         }

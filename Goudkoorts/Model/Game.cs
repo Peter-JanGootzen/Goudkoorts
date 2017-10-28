@@ -14,5 +14,7 @@ namespace Goudkoorts.Model
         public int Points { get; set; }
 
         public void Update() => Points += 10;
+
+        public Tile GetFirstTile() => _Level.FirstTile;
     }
 }

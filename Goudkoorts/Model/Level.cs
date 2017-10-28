@@ -12,7 +12,16 @@ namespace Goudkoorts.Model
         public List<Ship> ShipList;
         public List<Switch> SwitchList;
 
-        private GameObject _FirstTile;
+
+        private Tile _FirstTile;
+        public Tile FirstTile {
+            set
+            {
+                if (_FirstTile != null)
+                    _FirstTile = value;
+            }
+            get { return _FirstTile; }
+        }
 
         public Level()
         {
@@ -35,19 +44,6 @@ namespace Goudkoorts.Model
             {
                 ShipList.Add(ship);
             }
-        }
-
-        public void SetFirstTile(Tile tile)
-        {
-            if(tile != null)
-            {
-                _FirstTile = tile;
-            }
-        }
-
-        public Tile GetFirstTile()
-        {
-            return (Tile)_FirstTile;
         }
 
         public void AddSwitch(Switch Switch)

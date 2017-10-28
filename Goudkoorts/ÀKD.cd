@@ -23,7 +23,7 @@
   <Class Name="Goudkoorts.Model.Level" Collapsed="true">
     <Position X="2.5" Y="8.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AABAAAYAAAAAMAQAAAAQAAAgAAEAAAAAAAAAAAAEAAA=</HashCode>
+      <HashCode>AABAAAQAAAAAMAQAAAAQIAAAAAEAAAAAAAAAAAAEAAA=</HashCode>
       <FileName>Model\Level.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -183,7 +183,7 @@
       </MemberNameLabel>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AUAQAAAAAAAAAAAAAAAAAAAkAABAAAAACAAAAABAAAA=</HashCode>
+      <HashCode>AEAQAAAAAAAAAAAAAAAAAAAkAABAAAAACACAAABAAAA=</HashCode>
       <FileName>Process\GameController.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -194,7 +194,7 @@
   <Class Name="Goudkoorts.Presentation.CLI" Collapsed="true">
     <Position X="2.5" Y="4.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAIAAACAAAAEAEAAAAAAAAAAAAQAAAAAAAAAAAgI=</HashCode>
+      <HashCode>AEAAAAAAAAAAAAAAEAAAAAAAAAAAAAEAAAAAAAQAAAA=</HashCode>
       <FileName>Presentation\CLI.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -214,7 +214,7 @@
       </MemberNameLabel>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAQAAQAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAQAAQAAAAAAgAAAACAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Model\Game.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>

@@ -15,7 +15,7 @@ namespace Goudkoorts
             Level level = new Level();
             Tile[,] levelArray = ParseLevelFile(level);
             GenerateReferences(levelArray);
-            level.SetFirstTile(levelArray[0, 0]);
+            level.FirstTile = levelArray[0, 0];
             GenerateTrack(level.WarehouseList);
             return level;
         }
@@ -337,7 +337,7 @@ namespace Goudkoorts
                 Track temp = (Track)w._East;
                 while (temp._Next != null)
                 {
-                    Console.Write(temp.ToChar());
+                    Console.Write(temp.ToString());
                     temp = (Track)temp._Next;
                 }
                 Console.WriteLine();

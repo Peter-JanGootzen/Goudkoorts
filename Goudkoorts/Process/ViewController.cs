@@ -1,4 +1,5 @@
 ﻿using Goudkoorts.Model;
+using Goudkoorts.Presentation;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,9 +13,10 @@ namespace Goudkoorts.Process
         private CLI _CLI;
         public ViewController(GameController controller)
         {
-            _CLI = new CLI(controller);
+            _CLI = new CLI();
         }
 
+        /*
         public void PrintCLI(Tile firstTile)
         {
             Tile currentxaxistile = firstTile;
@@ -41,21 +43,21 @@ namespace Goudkoorts.Process
                     _CLI.WriteEnter();
                 }
             }
-        }
+        } */
 
-        public void SendModelStringToView()
+        public void SendModelStringToView(Tile firstTile)
         {
-
+            _CLI.ReceiveModelString(GenerateModelString(firstTile));
         }
 
-        public void GenerateModelString(Tile firstTile)
+        public String GenerateModelString(Tile firstTile)
         {
             String ModelString = "";
             Tile currentxaxistile = firstTile;
             Tile currentyaxistile = firstTile;
             while (currentyaxistile != null)
             {
-                ModelString += currentxaxistile.ToChar();
+                ModelString += currentxaxistile.ToString();
 
                 if (currentxaxistile._East != null)
                     currentxaxistile = currentxaxistile._East;
@@ -65,6 +67,7 @@ namespace Goudkoorts.Process
                     currentxaxistile = currentyaxistile;
                 }
             }
+            return ModelString;
         }
     }
 }

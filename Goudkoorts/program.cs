@@ -14,7 +14,6 @@ namespace Goudkoorts
         {
             GameController gc = new GameController();
             gc.StartGame();
-            gc.PrintGame(gc._Game._Level.GetFirstTile());
             Console.ReadLine();
         }
     }

@@ -18,6 +18,7 @@ namespace Goudkoorts
             _ParseController = new ParseController();
             _ViewController = new ViewController(this);
             LoadLevel();
+            SendModelStringToView();
         }
 
         private void LoadLevel()
@@ -25,11 +26,11 @@ namespace Goudkoorts
             _Game._Level = _ParseController.LoadLevel();
         }
 
-
-        private void PrintGame(Tile firstTile)
+        private void SendModelStringToView()
         {
-            _ViewController.PrintCLI(firstTile);
+            _ViewController.SendModelStringToView(_Game.GetFirstTile());
         }
+
         private void SwitchTheSwitch(int switchInt)
         {
             _Game._Level.SwitchList[switchInt].SwitchActiveTrack();

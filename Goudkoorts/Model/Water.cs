@@ -17,6 +17,8 @@ namespace Goudkoorts.Model
             }
         }
 
+        public Water() { }
+
         public override bool MoveOntoThis(Movable movable)
         {
             return MoveOntoThis(movable as dynamic);

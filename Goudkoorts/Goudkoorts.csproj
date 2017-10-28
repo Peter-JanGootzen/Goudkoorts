@@ -46,6 +46,7 @@
     <Compile Include="Model\GameObject.cs" />
     <Compile Include="Model\IObservable.cs" />
     <Compile Include="Model\IObserver.cs" />
+    <Compile Include="Model\MovableStandable.cs" />
     <Compile Include="Presentation\CLI.cs" />
     <Compile Include="Model\Game.cs" />
     <Compile Include="Presentation\IView.cs" />

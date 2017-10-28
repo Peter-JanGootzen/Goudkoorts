@@ -14,7 +14,6 @@ namespace Goudkoorts
         {
             GameController gc = new GameController();
             gc.StartGame();
-            Console.ReadLine();
         }
     }
 }

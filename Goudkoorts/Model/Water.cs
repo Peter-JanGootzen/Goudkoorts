@@ -9,12 +9,9 @@ namespace Goudkoorts.Model
     {
         private Ship _Ship;
 
-        public Water(Movable movable) : base(movable)
+        public Water(Ship ship)
         {
-            if(movable is Ship)
-            {
-                this._Ship = (Ship)movable;
-            }
+            _Ship = ship;
         }
 
         public Water() { }

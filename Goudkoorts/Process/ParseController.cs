@@ -56,11 +56,8 @@ namespace Goudkoorts
                                 tiles[x, y] = new Water();
                                 break;
                             case "S":
-                                Ship ship = new Ship();
-                                level.AddShip(ship);
-                                Water water = new Water(ship);
-                                ship._Standable = water;
-                                water._Movable = ship;
+                                Water water = new Water();
+                                level.ShipSpawnWater = water;
                                 tiles[x, y] = water;
                                 break;
                             case " ":

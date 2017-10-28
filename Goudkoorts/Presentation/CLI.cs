@@ -27,7 +27,7 @@ namespace Goudkoorts.Presentation
                     Console.ResetColor();
                 }
 
-            });
+            }
             _LastModelString = modelString;
         }
 

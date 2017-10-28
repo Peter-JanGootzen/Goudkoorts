@@ -13,7 +13,11 @@ namespace Goudkoorts
         public Level LoadLevel()
         {
             Level level = new Level();
-            Tile[,] levelArray = ParseLevelFile(level);
+            Tile[,] levelArray = null;
+            while (levelArray == null)
+            {
+                levelArray = ParseLevelFile(level);
+            }
             GenerateReferences(levelArray);
             level.FirstTile = levelArray[0, 0];
             GenerateTrack(level.WarehouseList);
@@ -24,7 +28,7 @@ namespace Goudkoorts
         {
             Tile[,] tiles;
             OpenFileDialog fileChooser = new OpenFileDialog();
-            if (fileChooser.ShowDialog() == DialogResult.OK)
+            while (fileChooser.ShowDialog() == DialogResult.OK)
             {
                 String[] horizontalText = File.ReadAllLines(fileChooser.FileName.ToString());
 

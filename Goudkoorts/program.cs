@@ -9,12 +9,10 @@ namespace Goudkoorts
     class Program
     {
         [STAThread]
-
         static void Main()
         {
             GameController gc = new GameController();
             gc.StartGame();
-            Console.ReadLine();
         }
     }
 }

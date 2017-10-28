@@ -7,13 +7,20 @@ namespace Goudkoorts.Model
 {
     public class MarshallingYard : Track
     {
-        bool LastMarshallingYard;
+        bool FirstMarshallingYard;
+        private bool v;
+
         public MarshallingYard()
         {
         }
 
         public MarshallingYard(short cornerCode) : base(cornerCode)
         {
+        }
+
+        public MarshallingYard(bool first)
+        {
+            FirstMarshallingYard = first;
         }
 
         public override bool MoveOntoNext(Movable movable)
@@ -27,7 +34,7 @@ namespace Goudkoorts.Model
         // If this MarshallingYard has been taken after the moving and the Tile to the East is a Track, then all the MarshallingYards are taken.
         public override bool MoveOntoThis(Movable movable)
         {
-            if (base.MoveOntoThis(movable) && LastMarshallingYard)
+            if (base.MoveOntoThis(movable) && FirstMarshallingYard)
             {
                 return false;
             }

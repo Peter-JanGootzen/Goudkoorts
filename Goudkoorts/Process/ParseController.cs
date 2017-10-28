@@ -65,11 +65,14 @@ namespace Goudkoorts
                                 level.AddWarehouse(warehouse);
                                 tiles[x, y] = warehouse;
                                 break;
-                            case "x":
+                            case "z":
                                 tiles[x, y] = new MarshallingYard(-1);
                                 break;
                             case "X":
                                 tiles[x, y] = new MarshallingYard();
+                                break;
+                            case "x":
+                                tiles[x, y] = new MarshallingYard(true);
                                 break;
                             case "┤":
                                 tiles[x, y] = new Switch(5);
@@ -97,9 +100,6 @@ namespace Goudkoorts
                                 break;
                             case "─":
                                 tiles[x, y] = new Track(0);
-                                break;
-                            case "z":
-                                tiles[x, y] = new Track(-1);
                                 break;
                         }
                     }

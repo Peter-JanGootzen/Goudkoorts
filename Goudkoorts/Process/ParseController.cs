@@ -81,11 +81,13 @@ namespace Goudkoorts
                                 break;
                             case "┤":
                                 Switch Switch5 = new Switch(5);
+                                Switch5.SetActiveTrack((Track)Switch5._South);
                                 level.AddSwitch(Switch5);
                                 tiles[x, y] = Switch5;
                                 break;
                             case "├":
                                 Switch Switch2 = new Switch(2);
+                                Switch2.SetActiveTrack((Track)Switch2._North);
                                 level.AddSwitch(Switch2);
                                 tiles[x, y] = Switch2;
                                 break;

@@ -39,12 +39,18 @@ namespace Goudkoorts
         {
             while (true)
             {
-                Thread.Sleep(5000);
-                if (!(_Game.MoveMovables() & _Game.SpawnCarts()))
+                Thread.Sleep(1000);
+                try
+                {
+                    bool Move = _Game.MoveMovables();
+                    bool Spawn = _Game.SpawnCarts();
+                    if (Move || Spawn) {
+                        SendModelStringToView();
+                    }
+                } catch (LostException)
                 {
                     break;
                 }
-                SendModelStringToView();
             }
             _ForegroundGameLoopThread.Abort();
             _ViewController.DisplayGameOver(_Game.Points);

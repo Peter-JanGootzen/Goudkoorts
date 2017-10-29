@@ -30,36 +30,36 @@ namespace Goudkoorts.Model
 
         public bool MoveMovables()
         {
+            bool Changed = false;
             foreach (Cart c in _Level.CartList)
             {
-                if (!c.Move())
-                    return false;
+                if (c.Move())
+                    Changed = true;
             }
             foreach (Ship s in _Level.ShipList)
             {
-                if (!s.Move())
-                {
-                    return false;
-                }
+                if (s.Move())
+                    Changed = true;
             }
-            return true; // If they all returned true
+            return Changed; // If they all returned true
         }
 
         public bool SpawnCarts()
         {
+            bool Changed = false;
             foreach (Warehouse w in _Level.WarehouseList)
             {
                 if (_Random.Next(1, 100) <= CalcSpawnChance())
                 {
                     Cart cart = new Cart();
                     _Level.CartList.Add(cart);
-                    if (!w.SpawnCart(cart))
+                    if (w.SpawnCart(cart))
                     {
-                        return false;
+                        Changed = true;
                     }
                 }
             }
-            return true;
+            return Changed;
         }
 
         public void FlipSwitch(int switchNumber)
@@ -71,7 +71,7 @@ namespace Goudkoorts.Model
         // Needs to generate a number between 1 and 100 that is deriven from the amount of points
         private int CalcSpawnChance()
         {
-            return 20;
+            return 3;
         }
     }
 }

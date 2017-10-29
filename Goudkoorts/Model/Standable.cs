@@ -28,7 +28,7 @@ namespace Goudkoorts.Model
                 return true;
             }
             else
-                return false;
+                throw new LostException();
         }
 
         public virtual bool MoveOntoNext()
@@ -42,7 +42,7 @@ namespace Goudkoorts.Model
                 }
                 return false;
             }
-            else
+            else // When a movable despawns
             {
                 _Movable._Standable = null;
                 _Movable = null;

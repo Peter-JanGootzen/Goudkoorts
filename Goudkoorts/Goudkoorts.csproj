@@ -46,6 +46,7 @@
     <Compile Include="Model\GameObject.cs" />
     <Compile Include="Model\IObservable.cs" />
     <Compile Include="Model\IObserver.cs" />
+    <Compile Include="Model\LostException.cs" />
     <Compile Include="Presentation\CLI.cs" />
     <Compile Include="Model\Game.cs" />
     <Compile Include="Presentation\IView.cs" />
@@ -58,7 +59,7 @@
     <Compile Include="Model\Movable.cs" />
     <Compile Include="Process\ParseController.cs" />
     <Compile Include="Process\ViewController.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="Process\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Model\Ship.cs" />
     <Compile Include="Model\Switch.cs" />

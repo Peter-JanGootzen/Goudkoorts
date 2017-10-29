@@ -49,7 +49,7 @@ namespace Goudkoorts.Model
             if (movable._Standable == _ActiveTrack || cornerCode == 4 || cornerCode == 5) // if that path was open, try it to move to this
                 return base.MoveOntoThis(movable);
             else // if the path was closed, don't try to move it, but return true, because you didn't loose.
-                return true;
+                return false;
         }
 
         public void SetActiveTrack(Track activeTrack)

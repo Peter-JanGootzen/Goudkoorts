@@ -29,7 +29,7 @@ namespace Goudkoorts.Model
         public override bool MoveOntoNext()
         {
             if (_AdjecentDock != null && !_Ship.IsFull())
-                return true;
+                return false;
             else
                 return base.MoveOntoNext();
         }

@@ -21,22 +21,41 @@ namespace Goudkoorts.Model
         public override bool MoveOntoNext()
         {
             if (_Next == null)
-                return true;
-            else
-                return _Next.MoveOntoThis(_Movable);
+                return false;
+            else {
+                if (_Next._Movable == null)
+                {
+                    _Next.MoveOntoThis(_Movable);
+                    _Movable = null;
+                    return true;
+                }
+                else
+                    return false;
+            }
+                    
         }
 
         // If this MarshallingYard has been taken after the moving and the Tile to the East is a Track, then all the MarshallingYards are taken.
         public override bool MoveOntoThis(Movable movable)
         {
-            if (base.MoveOntoThis(movable) && FirstMarshallingYard && _Next._Movable != null)
+            if (base.MoveOntoThis(movable))
             {
-                return false;
+                if (FirstMarshallingYard && _Next._Movable != null) // If the marshalling yard is now full
+                {
+                    throw new LostException();
+                }
+                else
+                    return true;
             }
             else
-                return true;
+                return false;
         }
 
-        public override String ToString() => "X";
+        public override String ToString() {
+            if (_Movable != null)
+                return _Movable.ToString();
+            else
+                return "X";
+        }
     }
 }

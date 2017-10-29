@@ -16,9 +16,9 @@ namespace Goudkoorts.Model
 
         public override bool MoveOntoThis(Movable movable) => MoveOntoThis(movable as dynamic);
 
-        private bool MoveOntoThis(Ship ship) => false;
+        protected bool MoveOntoThis(Ship ship) => false;
 
-        private bool MoveOntoThis(Cart cart) => base.MoveOntoThis(cart);
+        protected virtual bool MoveOntoThis(Cart cart) => base.MoveOntoThis(cart);
 
         protected short cornerCode;
         public short CornerCode

@@ -7,6 +7,8 @@ namespace Goudkoorts.Model
 {
     public class Dock : Track
     {
+        Water _AdjecentWater;
+
         public Dock()
         {
         }
@@ -15,18 +17,7 @@ namespace Goudkoorts.Model
         {
         }
 
-        Water _AdjecentWater;
-        public override bool MoveOntoThis(Movable movable)
-        {
-            return base.MoveOntoThis(movable);
-        }
-
-        private bool MoveOnThis(Ship ship)
-        {
-            return false;
-        }
-
-        private bool MoveOnThis(Cart cart)
+        protected override bool MoveOntoThis(Cart cart)
         {
             if (base.MoveOntoThis(cart))
             {

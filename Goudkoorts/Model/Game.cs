@@ -48,6 +48,7 @@ namespace Goudkoorts.Model
 
         public void FlipSwitch(int switchNumber)
         {
+            if(switchNumber >= 0 && switchNumber < _Level.SwitchList.Count)
             _Level.SwitchList[switchNumber].Flip();
         }
 

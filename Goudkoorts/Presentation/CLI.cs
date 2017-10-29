@@ -39,7 +39,7 @@ namespace Goudkoorts.Presentation
             {
                 int.TryParse(Console.ReadKey().KeyChar.ToString(), out input);
             } while (!(input > 0 && input < 10));
-            return input;
+            return input - 1;
             /* if (int.TryParse(key.ToString(), out switchInt))
             {
                 if (switchInt > 0 && switchInt < controller._Game._Level.SwitchList.Count)

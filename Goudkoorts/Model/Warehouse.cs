@@ -12,7 +12,8 @@ namespace Goudkoorts.Model
         public bool SpawnCart(int chance, List<Cart> Carts)
         {
             Random r = new Random();
-            if (r.Next(1, 100) <= chance)
+            int random = r.Next(1, 100);
+            if (random <= chance)
             {
                 Cart cart = new Cart();
                 Carts.Add(cart);

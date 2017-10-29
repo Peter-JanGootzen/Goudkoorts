@@ -24,7 +24,7 @@ namespace Goudkoorts.Model
             return _Level.CartList;
         }
 
-        public void Update() => Points += 10;
+        public void Update(int points) => Points += points;
 
         public Tile GetFirstTile() => _Level.FirstTile;
 

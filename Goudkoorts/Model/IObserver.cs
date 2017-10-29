@@ -8,6 +8,6 @@ namespace Goudkoorts.Model
 {
     public interface IObserver
     {
-        void Update();
+        void Update(int value);
     }
 }

@@ -32,15 +32,16 @@ namespace Goudkoorts.Model
             if (cart.Empty())
             {
                 _GoldCount++;
+                Notify(1);
                 if (_GoldCount >= 8)
-                    Notify();
+                    Notify(10);
                 return true;
             }
             else
                 return false;
         }
 
-        public void Notify() => ObserverList.ForEach(x => x.Update());
+        public void Notify(int value) => ObserverList.ForEach(x => x.Update(value));
 
         public void Subscribe(IObserver observer) => ObserverList.Add(observer);
 

@@ -10,6 +10,6 @@ namespace Goudkoorts.Model
     {
         void Subscribe(IObserver observer);
         void Unsubscribe(IObserver observer);
-        void Notify();
+        void Notify(int value);
     }
 }

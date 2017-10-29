@@ -238,7 +238,7 @@ namespace Goudkoorts
                     if (Switch.CornerCode == 2)
                     {
                         temp._Next = (Track)Switch._East;
-                        Switch.SetActiveTrack((Track)temp._Next);
+                        Switch.SetActiveTrack((Track)temp._North);
                         Switch._FirstSwitchTrack = (Track)temp._North;
                         Switch._SecondSwitchTrack = (Track)temp._South;
 

@@ -9,9 +9,20 @@ namespace Goudkoorts.Model
     {
         // If any of the model methods return false, the game has basicly been lost. Except for the MarshallingYard because those can stand still.
 
-        public Level _Level;
-
+        private Level _Level;
+        private Random _Random;
         public int Points { get; set; }
+
+        public Game(Level level)
+        {
+            _Level = level;
+            _Random = new Random();
+        }
+
+        public List<Cart> GetCartList()
+        {
+            return _Level.CartList;
+        }
 
         public void Update() => Points += 10;
 
@@ -38,9 +49,14 @@ namespace Goudkoorts.Model
         {
             foreach (Warehouse w in _Level.WarehouseList)
             {
-                if (!w.SpawnCart(CalcSpawnChance(), _Level.CartList))
+                if (_Random.Next(1, 100) <= CalcSpawnChance())
                 {
-                    return false;
+                    Cart cart = new Cart();
+                    _Level.CartList.Add(cart);
+                    if (!w.SpawnCart(cart))
+                    {
+                        return false;
+                    }
                 }
             }
             return true;

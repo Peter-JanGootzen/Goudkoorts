@@ -10,11 +10,11 @@ namespace Goudkoorts.Process
 {
     public class ViewController
     {
-        private CLI _CLI;
+        private IView View;
         public bool IsSendingModelString;
         public ViewController(GameController controller)
         {
-            _CLI = new CLI();
+            View = new CLI();
             IsSendingModelString = false;
         }
 
@@ -49,12 +49,12 @@ namespace Goudkoorts.Process
 
         public int GetInput()
         {
-            return _CLI.GetInput();
+            return View.GetInput();
         }
 
         public void DisplayGameOver(int points)
         {
-            _CLI.DisplayMessage("Game Over\n You ended with " + points + " points!");
+            View.DisplayMessage("Game Over\n You ended with " + points + " points!");
         }
         
         public void SendModelStringToView(Tile firstTile)
@@ -62,7 +62,7 @@ namespace Goudkoorts.Process
             if (!IsSendingModelString)
             {
                 IsSendingModelString = true;
-                _CLI.ReceiveModelString(GenerateModelString(firstTile));
+                View.ReceiveModelString(GenerateModelString(firstTile));
                 IsSendingModelString = false;
             }
         }

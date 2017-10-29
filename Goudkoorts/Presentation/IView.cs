@@ -10,5 +10,6 @@ namespace Goudkoorts.Presentation
     {
         void ReceiveModelString(String modelString);
         int GetInput();
+        void DisplayMessage(String message);
     }
 }

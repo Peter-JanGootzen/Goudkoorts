@@ -17,7 +17,6 @@ namespace Goudkoorts
 
         public void StartGame()
         {
-            _Game = new Game();
             _ParseController = new ParseController();
             _ViewController = new ViewController(this);
             LoadLevel();
@@ -54,7 +53,7 @@ namespace Goudkoorts
 
         private void LoadLevel()
         {
-            _Game._Level = _ParseController.LoadLevel();
+            _Game = new Game(_ParseController.LoadLevel());
         }
 
         private void SendModelStringToView()
@@ -64,7 +63,7 @@ namespace Goudkoorts
 
         private void CheckCartsDespawned()
         {
-            _Game._Level.CartList.ForEach(x =>
+            _Game.GetCartList().ForEach(x =>
             {
                 if (x._Standable == null)
                 {

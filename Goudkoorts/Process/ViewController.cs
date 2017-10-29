@@ -57,14 +57,19 @@ namespace Goudkoorts.Process
             View.DisplayMessage("Game Over\n You ended with " + points + " points!");
         }
         
-        public void SendModelStringToView(Tile firstTile)
+        public void SendModelStringToView(Tile firstTile, int points)
         {
             if (!IsSendingModelString)
             {
                 IsSendingModelString = true;
-                View.ReceiveModelString(GenerateModelString(firstTile));
+                View.ReceiveModelString(SendScoreToView(points) + GenerateModelString(firstTile));
                 IsSendingModelString = false;
             }
+        }
+
+        public String SendScoreToView(int points)
+        {
+            return "+" + points + "\n";
         }
 
         public String GenerateModelString(Tile firstTile)

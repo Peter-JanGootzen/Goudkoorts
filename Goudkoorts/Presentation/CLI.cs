@@ -22,6 +22,10 @@ namespace Goudkoorts.Presentation
                 {
                     Console.WriteLine();
                 }
+                else if (x == '+')
+                {
+                    Console.Write("Your score is: ");
+                }
                 else
                 {
                     Console.Write(x);
@@ -51,6 +55,7 @@ namespace Goudkoorts.Presentation
             return false;
             */
         }
+
 
         public void DisplayMessage(String message)
         {

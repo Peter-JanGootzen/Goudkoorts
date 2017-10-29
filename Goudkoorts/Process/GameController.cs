@@ -64,7 +64,7 @@ namespace Goudkoorts
 
         private void SendModelStringToView()
         {
-            _ViewController.SendModelStringToView(_Game.GetFirstTile());
+            _ViewController.SendModelStringToView(_Game.GetFirstTile(), _Game.Points);
         }
 
         private void CheckCartsDespawned()

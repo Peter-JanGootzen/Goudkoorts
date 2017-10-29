@@ -10,7 +10,6 @@ namespace Goudkoorts.Model
     {
         public DespawnException():base("This Object needs to be despawned")
         {
-
         }
     }
 }

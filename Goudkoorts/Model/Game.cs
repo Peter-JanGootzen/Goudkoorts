@@ -57,6 +57,7 @@ namespace Goudkoorts.Model
                 } catch (DespawnException)
                 {
                     _Level.CartList.Remove(_Level.CartList[i]);
+                    Changed = true;
                 }
             }
             for (int i = 0; i < _Level.ShipList.Count; i++)
@@ -68,6 +69,7 @@ namespace Goudkoorts.Model
                 } catch (DespawnException)
                 {
                     _Level.ShipList.Remove(_Level.ShipList[i]);
+                    Changed = true;
                 }
             }
             return Changed; // If they all returned true

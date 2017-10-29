@@ -62,12 +62,12 @@ namespace Goudkoorts.Process
             if (!IsSendingModelString)
             {
                 IsSendingModelString = true;
-                View.ReceiveModelString(SendScoreToView(points) + GenerateModelString(firstTile));
+                View.ReceiveModelString(GenerateScoreString(points) + GenerateModelString(firstTile));
                 IsSendingModelString = false;
             }
         }
 
-        public String SendScoreToView(int points)
+        public String GenerateScoreString(int points)
         {
             return "+" + points + "\n";
         }

@@ -7,12 +7,10 @@ namespace Goudkoorts.Presentation
 {
     public class CLI : IView
     {
-        private String _LastModelString = "";
-
         private void RefreshCLI(String modelString)
         {
             Console.Clear();
-            foreach(var x in modelString)
+            foreach (var x in modelString)
             {
                 if (x == 'S')
                 {
@@ -33,7 +31,6 @@ namespace Goudkoorts.Presentation
                 }
 
             }
-            _LastModelString = modelString;
         }
 
         public int GetInput()
@@ -66,10 +63,7 @@ namespace Goudkoorts.Presentation
 
         public void ReceiveModelString(string modelString)
         {
-            if (_LastModelString.Equals(modelString))
-                return;
-            else
-                RefreshCLI(modelString);
+            RefreshCLI(modelString);
         }
     }
 }

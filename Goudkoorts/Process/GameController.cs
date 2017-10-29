@@ -39,15 +39,19 @@ namespace Goudkoorts
         {
             while (true)
             {
-                    Thread.Sleep(1000);
+                Thread.Sleep((int)(-20 * _Game.Points + 1500));
                 try
                 {
                     bool Move = _Game.MoveMovables();
                     bool Spawn = _Game.SpawnCarts();
-                    if (Move || Spawn) {
+                    if (_Game.ShouldSpawnShip)
+                        _Game.SpawnShip();
+                    if (Move || Spawn)
+                    {
                         SendModelStringToView();
                     }
-                } catch (LostException)
+                }
+                catch (LostException)
                 {
                     break;
                 }

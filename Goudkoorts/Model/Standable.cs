@@ -7,9 +7,9 @@ namespace Goudkoorts.Model
 {
     public abstract class Standable : Tile
     {
-        public Movable _Movable;
 
         public Standable _Next { get; set; }
+        public Movable _Movable;
 
         public Standable(Movable movable)
         {

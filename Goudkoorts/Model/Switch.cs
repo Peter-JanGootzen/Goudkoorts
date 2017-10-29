@@ -8,8 +8,9 @@ namespace Goudkoorts.Model
         public Track _FirstSwitchTrack;
         public Track _SecondSwitchTrack;
 
-        public Switch(short cornerType) : base(cornerType)
+        public Switch(short cornerCode) : base(cornerCode)
         {
+            if (cornerCode == 2 || cornerCode == 3) { }
         }
 
         public bool Flip()
@@ -45,7 +46,7 @@ namespace Goudkoorts.Model
 
         public override bool MoveOntoThis(Movable movable)
         {
-            if (movable._Standable == _ActiveTrack) // if that path was open, try it to move to this
+            if (movable._Standable == _ActiveTrack || cornerCode == 4 || cornerCode == 5) // if that path was open, try it to move to this
                 return base.MoveOntoThis(movable);
             else // if the path was closed, don't try to move it, but return true, because you didn't loose.
                 return true;

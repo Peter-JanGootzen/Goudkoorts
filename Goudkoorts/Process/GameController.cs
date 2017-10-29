@@ -11,7 +11,7 @@ namespace Goudkoorts
     public class GameController
     {
         public Game _Game;
-        private Thread _GameLoopThread;
+        private Thread _ForegroundGameLoopThread;
         public ParseController _ParseController;
         public ViewController _ViewController;
 
@@ -22,8 +22,8 @@ namespace Goudkoorts
             _ViewController = new ViewController(this);
             LoadLevel();
             SendModelStringToView();
-            _GameLoopThread = new Thread(new ThreadStart(ForegroundGameLoop));
-            _GameLoopThread.Start();
+            _ForegroundGameLoopThread = new Thread(new ThreadStart(ForegroundGameLoop));
+            _ForegroundGameLoopThread.Start();
             BackgroundGameLoop();
         }
 
@@ -40,14 +40,14 @@ namespace Goudkoorts
         {
             while (true)
             {
+                Thread.Sleep(5000);
                 if (!(_Game.MoveMovables() || _Game.SpawnCarts()))
                 {
                     break;
                 }
                 SendModelStringToView();
-                Thread.Sleep(5000);
             }
-            _GameLoopThread.Abort();
+            _ForegroundGameLoopThread.Abort();
             _ViewController.DisplayGameOver(_Game.Points);
             StartGame();
         }
@@ -60,11 +60,6 @@ namespace Goudkoorts
         private void SendModelStringToView()
         {
             _ViewController.SendModelStringToView(_Game.GetFirstTile());
-        }
-
-        private void SwitchTheSwitch(int switchInt)
-        {
-            _Game._Level.SwitchList[switchInt].Flip();
         }
 
         private void CheckCartsDespawned()

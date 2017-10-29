@@ -11,9 +11,11 @@ namespace Goudkoorts.Process
     public class ViewController
     {
         private CLI _CLI;
+        public bool IsSendingModelString;
         public ViewController(GameController controller)
         {
             _CLI = new CLI();
+            IsSendingModelString = false;
         }
 
         /*
@@ -57,7 +59,12 @@ namespace Goudkoorts.Process
         
         public void SendModelStringToView(Tile firstTile)
         {
-            _CLI.ReceiveModelString(GenerateModelString(firstTile));
+            if (!IsSendingModelString)
+            {
+                IsSendingModelString = true;
+                _CLI.ReceiveModelString(GenerateModelString(firstTile));
+                IsSendingModelString = false;
+            }
         }
 
         public String GenerateModelString(Tile firstTile)

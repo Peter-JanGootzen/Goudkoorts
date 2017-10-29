@@ -41,7 +41,7 @@ namespace Goudkoorts
             while (true)
             {
                 Thread.Sleep(5000);
-                if (!(_Game.MoveMovables() || _Game.SpawnCarts()))
+                if (!(_Game.MoveMovables() & _Game.SpawnCarts()))
                 {
                     break;
                 }

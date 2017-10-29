@@ -38,7 +38,7 @@ namespace Goudkoorts.Model
         {
             foreach (Warehouse w in _Level.WarehouseList)
             {
-                if (!w.SpawnCart(CalcSpawnChance()))
+                if (!w.SpawnCart(CalcSpawnChance(), _Level.CartList))
                 {
                     return false;
                 }
@@ -55,7 +55,7 @@ namespace Goudkoorts.Model
         // Needs to generate a number between 1 and 100 that is deriven from the amount of points
         private int CalcSpawnChance()
         {
-            return 50;
+            return 20;
         }
     }
 }

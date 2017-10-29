@@ -22,7 +22,7 @@ namespace Goudkoorts
             _ViewController = new ViewController(this);
             LoadLevel();
             SendModelStringToView();
-            _GameLoopThread = new Thread(ForegroundGameLoop);
+            _GameLoopThread = new Thread(new ThreadStart(ForegroundGameLoop));
             _GameLoopThread.Start();
             BackgroundGameLoop();
         }

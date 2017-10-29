@@ -11,6 +11,7 @@ namespace Goudkoorts.Model
         public List<Cart> CartList;
         public List<Ship> ShipList;
         public List<Switch> SwitchList;
+        public List<Dock> DockList;
         public Water ShipSpawnWater;
 
         public Tile FirstTile {
@@ -28,6 +29,7 @@ namespace Goudkoorts.Model
             CartList = new List<Cart>();
             ShipList = new List<Ship>();
             SwitchList = new List<Switch>();
+            DockList = new List<Dock>();
         }
 
         public void AddWarehouse(Warehouse warehouse)
@@ -50,6 +52,14 @@ namespace Goudkoorts.Model
             if(Switch != null)
             {
                 SwitchList.Add(Switch);
+            }
+        }
+
+        public void AddDock(Dock dock)
+        {
+            if(dock != null)
+            {
+                DockList.Add(dock);
             }
         }
     }

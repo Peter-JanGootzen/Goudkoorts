@@ -14,11 +14,13 @@ namespace Goudkoorts
         {
             Level level = new Level();
             Tile[,] levelArray = null;
+            
             while (levelArray == null)
             {
                 levelArray = ParseLevelFile(level);
             }
             GenerateReferences(levelArray);
+            GenerateDocks(level.DockList);
             level.FirstTile = levelArray[0, 0];
             GenerateTrack(level.WarehouseList);
             return level;
@@ -100,7 +102,9 @@ namespace Goudkoorts
                                 tiles[x, y] = new Track(3);
                                 break;
                             case "d":
-                                tiles[x, y] = new Dock();
+                                Dock dock = new Dock();
+                                level.AddDock(dock);
+                                tiles[x, y] = dock;
                                 break;
                             case "|":
                                 tiles[x, y] = new Track(1);
@@ -111,6 +115,7 @@ namespace Goudkoorts
                             case "+":
                                 tiles[x, y] = new Track(-1);
                                 break;
+
                         }
                     }
                 }
@@ -200,7 +205,7 @@ namespace Goudkoorts
                     }
                 }
             }
-
+            
         }
 
         public void GenerateRoute(Tile tile, Track PreviousTrack)
@@ -308,6 +313,29 @@ namespace Goudkoorts
                 }
                 previousTrack = temp;
                 temp = (Track)temp._Next;
+            }
+        }
+
+        public void GenerateDocks(List<Dock> docks)
+        {
+            foreach(var d in docks)
+            {
+                if(d._North is Water waterNorth)
+                {
+                    waterNorth._AdjecentDock = d;
+                }
+                else if(d._South is Water waterSouth)
+                {
+                    waterSouth._AdjecentDock = d;
+                }
+                else if (d._South is Water waterEast)
+                {
+                    waterEast._AdjecentDock = d;
+                }
+                else if (d._South is Water waterWest)
+                {
+                    waterWest._AdjecentDock = d;
+                }
             }
         }
 

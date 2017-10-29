@@ -34,7 +34,7 @@ namespace Goudkoorts
             while (temp._West != null)
             {
                 temp._Next = (Water)temp._West;
-                temp = (Water)temp._Next
+                temp = (Water)temp._Next;
             }
         }
 

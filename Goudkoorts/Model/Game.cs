@@ -54,7 +54,7 @@ namespace Goudkoorts.Model
         // Needs to generate a number between 1 and 100 that is deriven from the amount of points
         private int CalcSpawnChance()
         {
-            return 10;
+            return 50;
         }
     }
 }

@@ -12,7 +12,7 @@ namespace Goudkoorts.Model
         public bool SpawnCart(int chance)
         {
             Random r = new Random();
-            if (!_AdjecentTrack.IsTaken() && r.Next(1, 100) < chance)
+            if (!_AdjecentTrack.IsTaken() && r.Next(1, 100) <= chance)
             {
                 return _AdjecentTrack.MoveOntoThis(new Cart());
             }

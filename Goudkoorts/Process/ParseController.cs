@@ -19,11 +19,23 @@ namespace Goudkoorts
             {
                 levelArray = ParseLevelFile(level);
             }
+            GenerateWater(level.ShipSpawnWater);
+            
             GenerateReferences(levelArray);
             GenerateDocks(level.DockList);
             level.FirstTile = levelArray[0, 0];
             GenerateTrack(level.WarehouseList);
             return level;
+        }
+
+        public void GenerateWater(Water water)
+        {
+            Water temp = water;
+            while (temp._West != null)
+            {
+                temp._Next = (Water)temp._West;
+                temp = (Water)temp._Next
+            }
         }
 
         public Tile[,] ParseLevelFile(Level level)
@@ -210,6 +222,7 @@ namespace Goudkoorts
 
         public void GenerateRoute(Tile tile, Track PreviousTrack)
         {
+            
             Track temp = (Track)tile;
             Track previousTrack = PreviousTrack;
             while (temp.CornerCode != -1)
@@ -320,6 +333,7 @@ namespace Goudkoorts
 
         public void GenerateDocks(List<Dock> docks)
         {
+            
             foreach(var d in docks)
             {
                 if(d._North is Water waterNorth)

@@ -324,18 +324,22 @@ namespace Goudkoorts
             {
                 if(d._North is Water waterNorth)
                 {
+                    d._AdjecentWater = waterNorth;
                     waterNorth._AdjecentDock = d;
                 }
                 else if(d._South is Water waterSouth)
                 {
+                    d._AdjecentWater = waterSouth;
                     waterSouth._AdjecentDock = d;
                 }
                 else if (d._South is Water waterEast)
                 {
+                    d._AdjecentWater = waterEast;
                     waterEast._AdjecentDock = d;
                 }
                 else if (d._South is Water waterWest)
                 {
+                    d._AdjecentWater = waterWest;
                     waterWest._AdjecentDock = d;
                 }
             }

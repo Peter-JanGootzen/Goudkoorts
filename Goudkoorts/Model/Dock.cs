@@ -7,7 +7,7 @@ namespace Goudkoorts.Model
 {
     public class Dock : Track
     {
-        Water _AdjecentWater;
+        public Water _AdjecentWater;
 
         public Dock()
         {

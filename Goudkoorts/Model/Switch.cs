@@ -17,10 +17,12 @@ namespace Goudkoorts.Model
             if(_ActiveTrack == _FirstSwitchTrack)
             {
                 _ActiveTrack = _SecondSwitchTrack;
+
             } else
             {
                 _ActiveTrack = _FirstSwitchTrack;
             }
+            
             switch (cornerCode)
             {
                 case 2:
@@ -30,10 +32,12 @@ namespace Goudkoorts.Model
                     cornerCode = 2;
                     break;
                 case 4:
+                    _Next = _ActiveTrack;
                     cornerCode = 5;
                     break;
                 case 5:
                     cornerCode = 4;
+                    _Next = _ActiveTrack;
                     break;
             }
             return true;

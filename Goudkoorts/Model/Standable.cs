@@ -24,6 +24,7 @@ namespace Goudkoorts.Model
             if (_Movable == null)
             {
                 _Movable = movable;
+                movable._Standable = this;
                 return true;
             }
             else
@@ -33,7 +34,14 @@ namespace Goudkoorts.Model
         public virtual bool MoveOntoNext()
         {
             if (_Next != null)
-                return _Next.MoveOntoThis(_Movable);
+            {
+                if (_Next.MoveOntoThis(_Movable))
+                {
+                    _Movable = null;
+                    return true;
+                }
+                return false;
+            }
             else
             {
                 _Movable._Standable = null;

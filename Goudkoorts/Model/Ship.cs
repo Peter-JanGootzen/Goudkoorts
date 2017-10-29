@@ -13,6 +13,7 @@ namespace Goudkoorts.Model
 
         public Ship()
         {
+            _GoldCount = 0;
             ObserverList = new List<Model.IObserver>();
         }
 

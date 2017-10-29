@@ -17,6 +17,7 @@ namespace Goudkoorts.Model
         {
             _Level = level;
             _Random = new Random();
+            SpawnShip();
         }
 
         public List<Cart> GetCartList()
@@ -24,7 +25,23 @@ namespace Goudkoorts.Model
             return _Level.CartList;
         }
 
-        public void Update(int points) => Points += points;
+        public void Update(int points)
+        {
+            Points += points;
+            if (points == 10)
+            {
+                SpawnShip();
+            }
+        }
+
+        private void SpawnShip()
+        {
+            Ship ship = new Ship();
+            ship.Subscribe(this);
+            _Level.ShipList.Add(ship);
+            _Level.ShipSpawnWater._Movable = ship;
+            ship._Standable = _Level.ShipSpawnWater;
+        }
 
         public Tile GetFirstTile() => _Level.FirstTile;
 

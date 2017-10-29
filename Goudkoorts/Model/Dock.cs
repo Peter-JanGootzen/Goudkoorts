@@ -21,11 +21,17 @@ namespace Goudkoorts.Model
         {
             if (base.MoveOntoThis(cart))
             {
-                return _AdjecentWater.DepositGoldOntoMovable(cart);
+                _AdjecentWater.DepositGoldOntoMovable(cart);
+                return true;
             }
             return false;
         }
 
-        public override String ToString() => "D";
+        public override String ToString() {
+            if (_Movable != null)
+                return _Movable.ToString();
+            else
+                return "D";
+        }
     }
 }

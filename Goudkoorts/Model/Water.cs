@@ -36,7 +36,10 @@ namespace Goudkoorts.Model
 
         public bool DepositGoldOntoMovable(Cart cart)
         {
-            return DepositGoldOntoMovable(_Movable as dynamic, cart);
+            if (_Movable != null)
+                return DepositGoldOntoMovable(_Movable as dynamic, cart);
+            else
+                return false;
         }
 
         private bool DepositGoldOntoMovable(Ship ship, Cart depositCart)

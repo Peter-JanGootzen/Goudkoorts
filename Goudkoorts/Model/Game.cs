@@ -48,15 +48,27 @@ namespace Goudkoorts.Model
         public bool MoveMovables()
         {
             bool Changed = false;
-            foreach (Cart c in _Level.CartList)
+            for (int i = _Level.CartList.Count - 1; i > -1; i--)
             {
-                if (c.Move())
-                    Changed = true;
+                try
+                {
+                    if (_Level.CartList[i].Move())
+                        Changed = true;
+                } catch (DespawnException)
+                {
+                    _Level.CartList.Remove(_Level.CartList[i]);
+                }
             }
-            foreach (Ship s in _Level.ShipList)
+            for (int i = _Level.ShipList.Count -1; i > -1; i--)
             {
-                if (s.Move())
-                    Changed = true;
+                try
+                {
+                    if (_Level.ShipList[i].Move())
+                        Changed = true;
+                } catch (DespawnException)
+                {
+                    _Level.ShipList.Remove(_Level.ShipList[i]);
+                }
             }
             return Changed; // If they all returned true
         }

@@ -23,9 +23,9 @@ namespace Goudkoorts.Model
             set { _GoldCount = value; }
         }
 
-        public bool IsFull()
-        {
-            return _GoldCount == 8;
+        public override bool Filled {
+            get => _GoldCount == 8;
+            set { }
         }
 
         public bool DepositGold(Cart cart)

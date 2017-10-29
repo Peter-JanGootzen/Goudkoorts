@@ -46,7 +46,7 @@ namespace Goudkoorts.Model
             {
                 _Movable._Standable = null;
                 _Movable = null;
-                return true;    
+                throw new DespawnException();
             }
         }
 

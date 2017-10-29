@@ -116,7 +116,7 @@
       </MemberNameLabel>
     </AssociationLine>
     <TypeIdentifier>
-      <HashCode>AAAAgAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAgAAAAIAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAACA=</HashCode>
       <FileName>Model\Movable.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -126,7 +126,7 @@
   <Class Name="Goudkoorts.Model.Ship" Collapsed="true">
     <Position X="6.25" Y="9" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAEQAAAAAAAAAACABBKQAQAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAEQAAAAAAAAAASABBCQAQAAAAAAAA=</HashCode>
       <FileName>Model\Ship.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -134,7 +134,7 @@
   <Class Name="Goudkoorts.Model.Water" Collapsed="true">
     <Position X="6.25" Y="13.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAEAEBAAAAACAAAABAAAAAAAAAEAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAEAEBAAAAAAAAAABAAAAAAAAAEAAAAA=</HashCode>
       <FileName>Model\Water.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -225,7 +225,7 @@
   <Class Name="Goudkoorts.ParseController" Collapsed="true">
     <Position X="5.5" Y="6" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAIAAAAAAEAAAAAAAAAAAAEAAAAAAAAAAAAEgAAACA=</HashCode>
+      <HashCode>AAAIAAAAAAEAAAAAAAAAAACEAAAAAAAAAAAAEgAAACA=</HashCode>
       <FileName>Process\ParseController.cs</FileName>
     </TypeIdentifier>
   </Class>

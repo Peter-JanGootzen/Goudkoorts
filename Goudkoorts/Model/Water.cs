@@ -7,12 +7,10 @@ namespace Goudkoorts.Model
 {
     public class Water : Standable
     {
-        private Ship _Ship;
         public Dock _AdjecentDock;
 
         public Water(Ship ship)
         {
-            _Ship = ship;
         }
 
         public Water() { }
@@ -28,7 +26,7 @@ namespace Goudkoorts.Model
 
         public override bool MoveOntoNext()
         {
-            if (_AdjecentDock != null && !_Ship.IsFull())
+            if (_AdjecentDock != null && !_Movable.Filled)
                 return false;
             else
                 return base.MoveOntoNext();
@@ -54,8 +52,8 @@ namespace Goudkoorts.Model
 
         public override String ToString()
         {
-            if (_Ship != null)
-                return _Ship.ToString();
+            if (_Movable != null)
+                return _Movable.ToString();
             return "█";
         }
     }

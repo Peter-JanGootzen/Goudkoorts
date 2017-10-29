@@ -45,7 +45,7 @@ namespace Goudkoorts
                     break;
                 }
                 SendModelStringToView();
-                Thread.Sleep((int)(_Game.Points * 0.1));
+                Thread.Sleep(5000);
             }
             _GameLoopThread.Abort();
             _ViewController.DisplayGameOver(_Game.Points);

@@ -11,6 +11,7 @@ namespace Goudkoorts.Presentation
 
         private void RefreshCLI(String modelString)
         {
+            Console.Clear();
             foreach(var x in modelString)
             {
                 if (x == 'S')
@@ -36,7 +37,7 @@ namespace Goudkoorts.Presentation
             int input;
             do
             {
-                int.TryParse(Console.ReadKey().Key.ToString(), out input);
+                int.TryParse(Console.ReadKey().KeyChar.ToString(), out input);
             } while (!(input > 0 && input < 10));
             return input;
             /* if (int.TryParse(key.ToString(), out switchInt))

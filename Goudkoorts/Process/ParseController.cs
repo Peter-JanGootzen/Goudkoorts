@@ -19,12 +19,13 @@ namespace Goudkoorts
             {
                 levelArray = ParseLevelFile(level);
             }
-            GenerateWater(level.ShipSpawnWater);
+           
             
             GenerateReferences(levelArray);
             GenerateDocks(level.DockList);
             level.FirstTile = levelArray[0, 0];
             GenerateTrack(level.WarehouseList);
+            GenerateWater(level.ShipSpawnWater);
             return level;
         }
 

@@ -48,7 +48,7 @@ namespace Goudkoorts.Model
         public bool MoveMovables()
         {
             bool Changed = false;
-            for (int i = _Level.CartList.Count - 1; i > -1; i--)
+            for (int i = 0; i < _Level.CartList.Count; i++)
             {
                 try
                 {
@@ -59,7 +59,7 @@ namespace Goudkoorts.Model
                     _Level.CartList.Remove(_Level.CartList[i]);
                 }
             }
-            for (int i = _Level.ShipList.Count -1; i > -1; i--)
+            for (int i = 0; i < _Level.ShipList.Count; i++)
             {
                 try
                 {

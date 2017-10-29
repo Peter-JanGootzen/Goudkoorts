@@ -39,7 +39,7 @@ namespace Goudkoorts
         {
             while (true)
             {
-                Thread.Sleep(1000);
+                    Thread.Sleep(1000);
                 try
                 {
                     bool Move = _Game.MoveMovables();

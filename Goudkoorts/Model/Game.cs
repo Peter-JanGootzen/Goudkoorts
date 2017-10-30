@@ -12,11 +12,13 @@ namespace Goudkoorts.Model
         private Level _Level;
         private Random _Random;
         public int Points { get; set; }
+        public bool ShouldSpawnShip;
 
         public Game(Level level)
         {
             _Level = level;
             _Random = new Random();
+            ShouldSpawnShip = false;
             SpawnShip();
         }
 
@@ -30,17 +32,18 @@ namespace Goudkoorts.Model
             Points += points;
             if (points == 10)
             {
-                SpawnShip();
+                ShouldSpawnShip = true;
             }
         }
 
-        private void SpawnShip()
+        public void SpawnShip()
         {
             Ship ship = new Ship();
             ship.Subscribe(this);
             _Level.ShipList.Add(ship);
             _Level.ShipSpawnWater._Movable = ship;
             ship._Standable = _Level.ShipSpawnWater;
+            ShouldSpawnShip = false;
         }
 
         public Tile GetFirstTile() => _Level.FirstTile;
@@ -102,7 +105,7 @@ namespace Goudkoorts.Model
         // Needs to generate a number between 1 and 100 that is deriven from the amount of points
         private int CalcSpawnChance()
         {
-            return 3;
+            return (int)(0.04 * Points + 5);
         }
     }
 }

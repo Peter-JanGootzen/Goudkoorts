@@ -1,4 +1,5 @@
-# Goudkoorts by Bram-Boris Meerlo and Peter-Jan Gootzen for a Software Architecture assessment for Avans Hogeschool
+# Goudkoorts 
+by Bram-Boris Meerlo and Peter-Jan Gootzen for a Software Architecture assessment for Avans Hogeschool
 
 ## Controls
 Press 1 through 5 to flip the track switches

@@ -1,6 +1,8 @@
 # Goudkoorts 
 by Bram-Boris Meerlo and Peter-Jan Gootzen for a Software Architecture assessment for Avans Hogeschool
 
+## Screenshots
+![Gamescreen](Screenshots/Gamescreen.PNG)
 ## Controls
 Press 1 through 5 to flip the track switches
 
